@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabPiece : MonoBehaviour
+public class GrabPiece : SpatialNetworkBehaviour
 {
     private GameObject piece;
     private bool isGrab;
@@ -21,6 +21,7 @@ public class GrabPiece : MonoBehaviour
         {
             isGrab = true;
             this.piece = piece;
+            GiveControl(this.piece);
         }
         else
         {
@@ -28,5 +29,14 @@ public class GrabPiece : MonoBehaviour
             this.piece = null;
         }
         
+    }
+    public void GiveControl(GameObject pieceNetwork)
+    {
+        if (!hasControl)
+        {
+            SpatialNetworkObject obj = pieceNetwork.GetComponent<SpatialNetworkObject>();
+            obj.RequestOwnership();
+        }
+
     }
 }
