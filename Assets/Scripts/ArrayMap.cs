@@ -11,7 +11,7 @@ public class ArrayMap : MonoBehaviour
     public Vector3 inicio;
     private Vector3 positionChange;
     private string abc = "ABCDEFGH";
-    public GameObject[,] groundMap = new GameObject[8, 8];
+    public List<Map> maps = new List<Map>();
     // Start is called before the first frame update
     void Start()
     {
@@ -21,21 +21,35 @@ public class ArrayMap : MonoBehaviour
             for (int j = 0; j < 8; j++)
             {
                 GameObject a = Instantiate(groundPrefab, positionChange, Quaternion.identity,groundFather.transform);
-                groundMap[i, j] = a;
-                Debug.Log(groundMap[i, j]);
                 positionChange.z -= 1.79f;
-                CoordinateGround(i, j, a);
+                Coordinate coordinate = a.GetComponent<Coordinate>();
+                CoordinateGround(i, j, coordinate);
+                maps.Add(new Map(a, coordinate.letra, coordinate.number));
             }
             positionChange.z = inicio.z;
             positionChange.x += 1.79f;
         }
     }
 
-    private void CoordinateGround(int i, int j, GameObject a)
+    private void CoordinateGround(int i, int j, Coordinate coordinate)
     {
-        Coordinate prefab = a.GetComponent<Coordinate>();
-        prefab.number = j + 1;
-        char b = abc[i];
-        prefab.letra = b.ToString();
+        coordinate.number = i + 1;
+        char b = abc[j];
+        coordinate.letra = b.ToString();
+    }
+
+    [System.Serializable]
+    public class Map
+    {
+        public GameObject ground;
+        public string name;
+        public int number;
+
+        public Map(GameObject ground, string name, int number)
+        {
+            this.ground = ground;
+            this.name = name;
+            this.number = number;
+        }
     }
 }
