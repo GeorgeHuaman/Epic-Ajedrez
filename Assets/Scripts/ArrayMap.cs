@@ -11,6 +11,7 @@ public class ArrayMap : MonoBehaviour
     public Vector3 inicio;
     private Vector3 positionChange;
     private string abc = "ABCDEFGH";
+    public GameObject[,] groundMap = new GameObject[8, 8];
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class ArrayMap : MonoBehaviour
             for (int j = 0; j < 8; j++)
             {
                 GameObject a = Instantiate(groundPrefab, positionChange, Quaternion.identity,groundFather.transform);
+                groundMap[i, j] = a;
+                Debug.Log(groundMap[i, j]);
                 positionChange.z -= 1.79f;
                 CoordinateGround(i, j, a);
             }
