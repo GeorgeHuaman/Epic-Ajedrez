@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ArrayMap;
 
 public class ArrayMap : MonoBehaviour
 {
@@ -61,7 +62,21 @@ public class ArrayMap : MonoBehaviour
             }
         }
     }
-
+    public bool IsGroundEmpty(string letter, int number)
+    {
+        foreach (var m in maps)
+        {
+            if (m.name == letter && m.number == number)
+            {
+                return m.occupiedBy == null;
+            }
+        }
+        return false;
+    }
+    public Map GetMap(string letter, int number)
+    {
+        return maps.Find(m => m.name == letter && m.number == number);
+    }
     [System.Serializable]
     public class Map
     {

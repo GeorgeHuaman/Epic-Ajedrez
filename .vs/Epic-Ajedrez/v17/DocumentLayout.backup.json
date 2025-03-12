@@ -37,7 +37,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 292,
+          "DockedWidth": 233,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\GrabPiece.cs",
               "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\GrabPiece.cs",
               "RelativeToolTip": "Assets\\Scripts\\GrabPiece.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAcwIUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAABcBAAAAAAAAAAAuwHsBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T17:56:05.492Z",
               "EditorCaption": ""
@@ -80,7 +80,7 @@
           ]
         },
         {
-          "DockedWidth": 108,
+          "DockedWidth": 167,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -115,7 +115,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\ArrayMap.cs",
               "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\ArrayMap.cs",
               "RelativeToolTip": "Assets\\Scripts\\ArrayMap.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAMwBkAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAnwE4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T21:55:57.83Z",
               "EditorCaption": ""
