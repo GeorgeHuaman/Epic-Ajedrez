@@ -24,7 +24,7 @@ public class ArrayMap : MonoBehaviour
                 positionChange.z -= 1.79f;
                 Coordinate coordinate = a.GetComponent<Coordinate>();
                 CoordinateGround(i, j, coordinate);
-                maps.Add(new Map(a, coordinate.letra, coordinate.number,false));
+                maps.Add(new Map(a, coordinate.letra, coordinate.number));
             }
             positionChange.z = inicio.z;
             positionChange.x += 1.79f;
@@ -37,6 +37,30 @@ public class ArrayMap : MonoBehaviour
         char b = abc[j];
         coordinate.letra = b.ToString();
     }
+    public void UpdateMapOccupancy()
+    {
+        foreach (var m in maps)
+        {
+            m.occupiedBy = null;
+        }
+
+        PiecePositionDetector[] allPieces = GameObject.FindObjectsOfType<PiecePositionDetector>();
+
+        foreach (var pieceDetector in allPieces)
+        {
+            string letra = pieceDetector.currentLetter;
+            int numero = pieceDetector.currentNumber;
+
+            foreach (var m in maps)
+            {
+                if (m.name == letra && m.number == numero)
+                {
+                    m.occupiedBy = pieceDetector.gameObject;
+                    break;
+                }
+            }
+        }
+    }
 
     [System.Serializable]
     public class Map
@@ -44,14 +68,14 @@ public class ArrayMap : MonoBehaviour
         public GameObject ground;
         public string name;
         public int number;
-        public bool occupied;
+        public GameObject occupiedBy;
 
-        public Map(GameObject ground, string name, int number, bool occupied)
+        public Map(GameObject ground, string name, int number)
         {
             this.ground = ground;
             this.name = name;
             this.number = number;
-            this.occupied = occupied;
+            this.occupiedBy = null;
         }
     }
 }
