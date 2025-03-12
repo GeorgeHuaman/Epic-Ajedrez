@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17975457, g: 0.415409, b: 0.787276, a: 1}
+  m_IndirectSpecularColor: {r: 0.17975044, g: 0.41543257, b: 0.78806263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 1686847677}
+    - target: {fileID: 826485056, guid: 6af416212fd301947b9346a990eea880, type: 3}
+      propertyPath: table
+      value: 
+      objectReference: {fileID: 693191347}
     - target: {fileID: 826485056, guid: 6af416212fd301947b9346a990eea880, type: 3}
       propertyPath: defaultMaterial
       value: 
@@ -318,6 +322,16 @@ PrefabInstance:
       propertyPath: sceneObjectGuid
       value: 1140690403
       objectReference: {fileID: 0}
+    - target: {fileID: 7350338726783827651, guid: 6af416212fd301947b9346a990eea880,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350338726783827709, guid: 6af416212fd301947b9346a990eea880,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7350338726783827710, guid: 6af416212fd301947b9346a990eea880,
         type: 3}
       propertyPath: sceneObjectGuid
@@ -385,6 +399,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af416212fd301947b9346a990eea880, type: 3}
+--- !u!114 &116011335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 826485056, guid: 6af416212fd301947b9346a990eea880,
+    type: 3}
+  m_PrefabInstance: {fileID: 116011334}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116011336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bfd126f9f32ef428469b29611ebd38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &116011336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 826485055, guid: 6af416212fd301947b9346a990eea880,
+    type: 3}
+  m_PrefabInstance: {fileID: 116011334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &116011337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116011336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320dceb26b25d4c0d94da1add34fe72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectFlags: 8
+  syncFlags: 0
+  networkPrefabGuid: 0
+  sceneObjectGuid: 1833329557
+  rootObject: {fileID: 0}
+  parentObject: {fileID: 0}
+  nestedObjects: []
+  behaviours:
+  - {fileID: 116011335}
 --- !u!1 &146767305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7350338727239915127, guid: 6af416212fd301947b9346a990eea880,
@@ -628,6 +681,58 @@ MonoBehaviour:
   currentLetter: 
   currentNumber: 0
   groundFather: {fileID: 552911393}
+--- !u!1 &693191345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7692376797553405752, guid: 6af416212fd301947b9346a990eea880,
+    type: 3}
+  m_PrefabInstance: {fileID: 116011334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &693191347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693191345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7753a5cac8f2f4c9bef4706945a07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blancos:
+  - {fileID: 1442893680}
+  - {fileID: 1970091408}
+  - {fileID: 1235286366}
+  - {fileID: 725737622}
+  - {fileID: 1415564954}
+  - {fileID: 1237889117}
+  - {fileID: 688184021}
+  - {fileID: 1516815129}
+  - {fileID: 900217899}
+  - {fileID: 146767305}
+  - {fileID: 346482157}
+  - {fileID: 1343440313}
+  - {fileID: 1385266320}
+  - {fileID: 685302058}
+  - {fileID: 882568120}
+  - {fileID: 1427083373}
+  negros:
+  - {fileID: 1945883019}
+  - {fileID: 55204430}
+  - {fileID: 330072894}
+  - {fileID: 388783230}
+  - {fileID: 1618238482}
+  - {fileID: 1274453132}
+  - {fileID: 1928613835}
+  - {fileID: 622026423}
+  - {fileID: 1869707655}
+  - {fileID: 2076182649}
+  - {fileID: 1895677246}
+  - {fileID: 1238384393}
+  - {fileID: 1658053734}
+  - {fileID: 1894831397}
+  - {fileID: 1592631260}
+  - {fileID: 1603789762}
 --- !u!1 &725737622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7350338725843689410, guid: 6af416212fd301947b9346a990eea880,

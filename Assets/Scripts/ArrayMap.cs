@@ -24,7 +24,7 @@ public class ArrayMap : MonoBehaviour
                 positionChange.z -= 1.79f;
                 Coordinate coordinate = a.GetComponent<Coordinate>();
                 CoordinateGround(i, j, coordinate);
-                maps.Add(new Map(a, coordinate.letra, coordinate.number));
+                maps.Add(new Map(a, coordinate.letra, coordinate.number,false));
             }
             positionChange.z = inicio.z;
             positionChange.x += 1.79f;
@@ -44,12 +44,14 @@ public class ArrayMap : MonoBehaviour
         public GameObject ground;
         public string name;
         public int number;
+        public bool occupied;
 
-        public Map(GameObject ground, string name, int number)
+        public Map(GameObject ground, string name, int number, bool occupied)
         {
             this.ground = ground;
             this.name = name;
             this.number = number;
+            this.occupied = occupied;
         }
     }
 }

@@ -3,16 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabPiece : SpatialNetworkBehaviour
+public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
 {
     private GameObject piece;
     private bool isGrab;
-
+    public Table table;
     [Header("GroundMaterials")]
     public Material defaultMaterial;
     public Material highlightMaterial;
+    private NetworkVariable<bool> turnWhite = new(initialValue: false);
 
     public ArrayMap map;
+    private void Start()
+    {
+        table = Table.instance;
+    }
     private void Update()
     {
         if (isGrab)
@@ -31,9 +36,47 @@ public class GrabPiece : SpatialNetworkBehaviour
         }
         else
         {
+            TurnWhite(this.piece);
+            //if (turnWhite)
+            //    table.TurnBlack();
+            
+            //else
+            //    table.TurnWhite();
+            
             isGrab = false;
             this.piece = null;
             ResetHighlights();
+        }
+    }
+    public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
+    {
+        if (args.changedVariables.ContainsKey(turnWhite.id))
+        {
+            if (turnWhite)
+                table.TurnBlack();
+
+            else
+                 table.TurnWhite();
+        }
+    }
+    private void TurnWhite(GameObject piece)
+    {
+        GiveControlTurn();
+        if (piece.GetComponent<PieceType>().color == PieceType.PieceColor.Blanco)
+        {
+            turnWhite.value = true;
+        }
+        else
+        {
+            turnWhite.value = false ;
+        }
+    }
+    public void GiveControlTurn()
+    {
+        if (!hasControl)
+        {
+            SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
+            obj.RequestOwnership();
         }
 
     }
@@ -74,6 +117,7 @@ public class GrabPiece : SpatialNetworkBehaviour
 
         PieceType pieceType = piece.GetComponent<PieceType>();
         int direction = (pieceType.color == PieceType.PieceColor.Blanco) ? 1 : -1;
+
 
         switch (piece.GetComponent<PieceType>().type)
         {
