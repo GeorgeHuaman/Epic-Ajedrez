@@ -34,6 +34,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     {
         if (!isGrab)
         {
+            map.UpdateMapOccupancy();
             initialPiecePosition = piece.transform.position;
             isGrab = true;
             this.piece = piece;
@@ -91,8 +92,10 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 CheckBishopMove(pieceType);
                 break;
             case PieceType.Type.Reina:
+                CheckQueenMove(pieceType);
                 break;
             case PieceType.Type.Rey:
+                CheckKingMove(pieceType);
                 break;
             default:
                 break;
@@ -375,6 +378,234 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                     HighlightGround(letter.ToString(), number);
                 }
                 break;
+            }
+        }
+    }
+    public void CheckQueenMove(PieceType pieceType)
+    {
+        PiecePositionDetector piecePositionDetector = piece.GetComponent<PiecePositionDetector>();
+        string currentLetter = piecePositionDetector.currentLetter;
+        int currentNumber = piecePositionDetector.currentNumber;
+        char currentLetterChar = currentLetter[0];
+        //arriba
+        for (int i = currentNumber + 1; i <= 8; i++)
+        {
+            var m = map.GetMap(currentLetter, i);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(currentLetter, i);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(currentLetter, i);
+                }
+                break;
+            }
+        }
+
+        //abajo
+        for (int i = currentNumber - 1; i >= 1; i--)
+        {
+            var m = map.GetMap(currentLetter, i);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(currentLetter, i);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(currentLetter, i);
+                }
+                break;
+            }
+        }
+
+        //derecha
+        for (char c = (char)(currentLetterChar + 1); c <= 'H'; c++)
+        {
+            var m = map.GetMap(c.ToString(), currentNumber);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(c.ToString(), currentNumber);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(c.ToString(), currentNumber);
+                }
+                break;
+            }
+        }
+
+        //izquierda
+        for (char c = (char)(currentLetterChar - 1); c >= 'A'; c--)
+        {
+            var m = map.GetMap(c.ToString(), currentNumber);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(c.ToString(), currentNumber);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(c.ToString(), currentNumber);
+                }
+                break;
+            }
+        }
+        // Movimiento: Diagonal arriba-derecha
+        for (int i = 1; i < 8; i++)
+        {
+            char letter = (char)(currentLetterChar + i);
+            int number = currentNumber + i;
+
+            if (letter > 'H' || number > 8) break;
+
+            var m = map.GetMap(letter.ToString(), number);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(letter.ToString(), number);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(letter.ToString(), number); // posible captura
+                }
+                break;
+            }
+        }
+
+        // Diagonal arriba-izquierda
+        for (int i = 1; i < 8; i++)
+        {
+            char letter = (char)(currentLetterChar - i);
+            int number = currentNumber + i;
+
+            if (letter < 'A' || number > 8) break;
+
+            var m = map.GetMap(letter.ToString(), number);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(letter.ToString(), number);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(letter.ToString(), number);
+                }
+                break;
+            }
+        }
+
+        // Diagonal abajo-derecha
+        for (int i = 1; i < 8; i++)
+        {
+            char letter = (char)(currentLetterChar + i);
+            int number = currentNumber - i;
+
+            if (letter > 'H' || number < 1) break;
+
+            var m = map.GetMap(letter.ToString(), number);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(letter.ToString(), number);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(letter.ToString(), number);
+                }
+                break;
+            }
+        }
+
+        // Diagonal abajo-izquierda
+        for (int i = 1; i < 8; i++)
+        {
+            char letter = (char)(currentLetterChar - i);
+            int number = currentNumber - i;
+
+            if (letter < 'A' || number < 1) break;
+
+            var m = map.GetMap(letter.ToString(), number);
+            if (m == null) break;
+
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(letter.ToString(), number);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(letter.ToString(), number);
+                }
+                break;
+            }
+        }
+    }
+    public void CheckKingMove(PieceType pieceType)
+    {
+        PiecePositionDetector piecePositionDetector = piece.GetComponent<PiecePositionDetector>();
+        string currentLetter = piecePositionDetector.currentLetter;
+        int currentNumber = piecePositionDetector.currentNumber;
+        char currentLetterChar = currentLetter[0];
+
+        List<(int, int)> direction = new ()
+        { (1,0), (-1,0), (0,1), (0,-1), (1,1),(-1,1),(1,-1),(-1,-1)};
+
+        foreach (var dir in direction) 
+        { 
+          char targetLetterchar = (char)(currentLetterChar+ dir.Item1);
+          int targetNumber = currentNumber + dir.Item2;
+            if(targetLetterchar < 'A' ||  targetLetterchar > 'H' || targetNumber < 1 || targetNumber > 8)
+            {
+                continue;
+
+            }
+            var m = map.GetMap(targetLetterchar.ToString(), targetNumber);
+            if (m == null) {continue;}
+            if (m.occupiedBy == null)
+            {
+                HighlightGround(targetLetterchar.ToString(), targetNumber);
+            }
+            else
+            {
+                PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
+                if (otherPiece != null && otherPiece.color != pieceType.color)
+                {
+                    HighlightGround(targetLetterchar.ToString(), targetNumber); // ilumina posible captura
+                }
             }
         }
     }
