@@ -35,32 +35,27 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     {
         if (!isGrab)
         {
+            this.piece = piece;
+            GiveControl(this.piece);
             map.UpdateMapOccupancy();
             initialPiecePosition = piece.transform.position;
             isGrab = true;
-            this.piece = piece;
-            GiveControl(this.piece);
             CalculatePieceMove();
         }
         else
         {
+            GiveControl(this.piece);
             if (piece.GetComponent<PiecePositionDetector>().VerifyPlay())
             {
                 piece.GetComponent<PiecePositionDetector>().ResetList();
                 TurnWhite(this.piece);
             }
             else
-                piece.GetComponent<PiecePositionDetector>().CorrectPosition();
-            //if (turnWhite)
-            //    table.TurnBlack();
-
-            //else
-            //    table.TurnWhite();
+            piece.GetComponent<PiecePositionDetector>().CorrectPosition();
             isGrab = false;
-            GiveControl(this.piece);
-            this.piece = null;
             ResetHighlights();
             map.UpdateMapOccupancy();
+            this.piece = null;
 
         }
     }
@@ -621,20 +616,16 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     #region NetworkControl
     public void GiveControlTurn()
     {
-        if (!hasControl)
-        {
             SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
             obj.RequestOwnership();
-        }
 
     }
     public void GiveControl(GameObject pieceNetwork)
     {
-        if (!hasControl)
-        {
+            SpatialNetworkObject grab = GetComponent<SpatialNetworkObject>();
+            grab.RequestOwnership();
             SpatialNetworkObject obj = pieceNetwork.GetComponent<SpatialNetworkObject>();
             obj.RequestOwnership();
-        }
 
     }
     public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
@@ -699,5 +690,26 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     }
     #endregion
 
+    public void ResetPosition()
+    {
+        foreach(var whrite in table.blancos)
+        {
+            if (whrite != null)
+            {
+                GiveControl(whrite);
+                whrite.transform.position = whrite.GetComponent<PiecePositionDetector>().initialPosition;
+            }
+        }
+        foreach (var black in table.negros)
+        {
+            if (black != null)
+            {
+                GiveControl(black);
+                black.transform.position = black.GetComponent<PiecePositionDetector>().initialPosition;
+            }
+        }
+        GiveControlTurn();
+        turnWhite.value = false;
+    }
 
 }

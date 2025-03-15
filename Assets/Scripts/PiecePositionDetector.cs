@@ -11,10 +11,12 @@ public class PiecePositionDetector : MonoBehaviour
     public List<(string, int)> positionPosible = new List<(string, int)>();
     public ArrayMap arrayMap;
     public GameObject groundFather;
+    public Vector3 initialPosition;
 
     private void Start()
     {
         StartCoroutine(PositionInitial());
+        initialPosition = transform.position;
     }
 
     void Update()

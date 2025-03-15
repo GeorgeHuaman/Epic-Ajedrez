@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static ArrayMap;
 
 public class ArrayMap : MonoBehaviour
 {
@@ -32,6 +31,7 @@ public class ArrayMap : MonoBehaviour
             positionChange.z = inicio.z;
             positionChange.x += 1.79f;
         }
+        UpdateMapOccupancy();
     }
 
     private void CoordinateGround(int i, int j, Coordinate coordinate)
