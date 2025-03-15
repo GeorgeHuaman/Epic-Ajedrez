@@ -13,9 +13,11 @@ public class ArrayMap : MonoBehaviour
     private Vector3 positionChange;
     private string abc = "ABCDEFGH";
     public List<Map> maps = new List<Map>();
+    public static ArrayMap instance;
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         positionChange = inicio;
         for (int i = 0; i < 8; i++)
         {
@@ -76,6 +78,18 @@ public class ArrayMap : MonoBehaviour
     public Map GetMap(string letter, int number)
     {
         return maps.Find(m => m.name == letter && m.number == number);
+    }
+
+    public Vector3 SearchGround(string letter, int number)
+    {
+        for(int i = 0; i < maps.Count;i++)
+        {
+            if(maps[i].name == letter && maps[i].number == number)
+            {
+                return maps[i].ground.transform.position;
+            }
+        }
+        return Vector3.zero;
     }
     [System.Serializable]
     public class Map

@@ -16,6 +16,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     [Header("GroundMaterials")]
     public Material defaultMaterial;
     public Material highlightMaterial;
+    public PiecePositionDetector positionDetector;
     
 
     public ArrayMap map;
@@ -43,13 +44,20 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
         }
         else
         {
-            TurnWhite(this.piece);
+            if (piece.GetComponent<PiecePositionDetector>().VerifyPlay())
+            {
+                piece.GetComponent<PiecePositionDetector>().ResetList();
+                TurnWhite(this.piece);
+            }
+            else
+                piece.GetComponent<PiecePositionDetector>().CorrectPosition();
             //if (turnWhite)
             //    table.TurnBlack();
 
             //else
             //    table.TurnWhite();
             isGrab = false;
+            GiveControl(this.piece);
             this.piece = null;
             ResetHighlights();
             map.UpdateMapOccupancy();
@@ -660,7 +668,10 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             {
                 MeshRenderer mr = m.ground.GetComponent<MeshRenderer>();
                 if (mr != null)
+                {
                     mr.material = highlightMaterial;
+                    piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letra,numero));
+                }
 
                 if (!validMoves.Contains((letra, numero)))
                     validMoves.Add((letra, numero));
@@ -687,5 +698,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
         }
     }
     #endregion
+
 
 }

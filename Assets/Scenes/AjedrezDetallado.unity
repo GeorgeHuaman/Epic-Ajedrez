@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17975457, g: 0.415409, b: 0.787276, a: 1}
+  m_IndirectSpecularColor: {r: 0.17975044, g: 0.41543257, b: 0.78806263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,6 +143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1001 &116011334
 PrefabInstance:
@@ -466,6 +469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &330072894 stripped
 GameObject:
@@ -487,6 +493,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &346482157 stripped
 GameObject:
@@ -508,6 +517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &378291552
 GameObject:
@@ -574,6 +586,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &501338758 stripped
 GameObject:
@@ -619,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552911393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.244019, y: 9.401043, z: 5.122288}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -646,6 +661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &685302058 stripped
 GameObject:
@@ -667,6 +685,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &688184021 stripped
 GameObject:
@@ -688,6 +709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &693191345 stripped
 GameObject:
@@ -761,6 +785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &828465093
 GameObject:
@@ -879,6 +906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &900217899 stripped
 GameObject:
@@ -900,6 +930,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1200323104
 GameObject:
@@ -1019,6 +1052,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1237889117 stripped
 GameObject:
@@ -1040,6 +1076,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1238384393 stripped
 GameObject:
@@ -1061,6 +1100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1255927857
 GameObject:
@@ -1179,6 +1221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1282507790
 GameObject:
@@ -1315,6 +1360,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1385266320 stripped
 GameObject:
@@ -1336,6 +1384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1415564954 stripped
 GameObject:
@@ -1357,6 +1408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1427083373 stripped
 GameObject:
@@ -1378,6 +1432,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1442893680 stripped
 GameObject:
@@ -1399,6 +1456,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1516815129 stripped
 GameObject:
@@ -1420,6 +1480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1592631260 stripped
 GameObject:
@@ -1441,6 +1504,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1603789762 stripped
 GameObject:
@@ -1462,6 +1528,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1618238482 stripped
 GameObject:
@@ -1483,6 +1552,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1658053734 stripped
 GameObject:
@@ -1504,6 +1576,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1686847676
 GameObject:
@@ -1643,6 +1718,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1894831397 stripped
 GameObject:
@@ -1664,6 +1742,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1895677246 stripped
 GameObject:
@@ -1685,6 +1766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1928613835 stripped
 GameObject:
@@ -1706,6 +1790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1945883019 stripped
 GameObject:
@@ -1727,6 +1814,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &1970091408 stripped
 GameObject:
@@ -1748,6 +1838,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &2076182649 stripped
 GameObject:
@@ -1769,6 +1862,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
+  arrayMap: {fileID: 1686847677}
   groundFather: {fileID: 552911393}
 --- !u!1 &2121965984
 GameObject:
