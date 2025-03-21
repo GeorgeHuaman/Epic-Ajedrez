@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
 {
@@ -10,12 +11,17 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     private GameObject piece;
     private bool isGrab;
     public Table table;
+    public CapturePiece white;
+    public CapturePiece black;
     private Vector3 initialPiecePosition;
     private List<(string, int)> validMoves = new();
+    private string letterCaptured;
+    private int numberCaptured;
 
     [Header("GroundMaterials")]
     public Material defaultMaterial;
     public Material highlightMaterial;
+    public Material CapturedlightMaterial;
     public PiecePositionDetector positionDetector;
     
 
@@ -45,7 +51,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
         else
         {
             GiveControl(this.piece);
-            if (piece.GetComponent<PiecePositionDetector>().VerifyPlay())
+            if (piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece))
             {
                 piece.GetComponent<PiecePositionDetector>().ResetList();
                 TurnWhite(this.piece);
@@ -54,12 +60,32 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             piece.GetComponent<PiecePositionDetector>().CorrectPosition();
             isGrab = false;
             ResetHighlights();
+            VerifyCaptured();
             map.UpdateMapOccupancy();
-            this.piece = null;
-
         }
     }
-  
+
+    private void VerifyCaptured()
+    {
+       PiecePositionDetector detector = piece.GetComponent<PiecePositionDetector>();
+       PieceType pieceType = piece.GetComponent<PieceType>();
+        if (letterCaptured == detector.currentLetter && numberCaptured == detector.currentNumber)
+        {
+            for (int i = 0; i < map.maps.Count; i++)
+            {
+                if( map.maps[i].name == letterCaptured && map.maps[i].number == numberCaptured)
+                {
+                    if (pieceType.color == PieceType.PieceColor.Blanco)
+                        black.CapturedPiece(map.maps[i].occupiedBy);
+                    else
+                        white.CapturedPiece(map.maps[i].occupiedBy);
+                    break;
+                }
+            }
+            this.piece = null;
+        }
+    }
+
     private void TurnWhite(GameObject piece)
     {
         GiveControlTurn();
@@ -162,7 +188,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(currentLetter, i);
+                    HighlightGroundCaptured(currentLetter, i);
                 }
                 break;
             }
@@ -183,7 +209,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(currentLetter, i);
+                    HighlightGroundCaptured(currentLetter, i);
                 }
                 break;
             }
@@ -204,7 +230,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(c.ToString(), currentNumber);
+                    HighlightGroundCaptured(c.ToString(), currentNumber);
                 }
                 break;
             }
@@ -225,7 +251,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(c.ToString(), currentNumber);
+                    HighlightGroundCaptured(c.ToString(), currentNumber);
                 }
                 break;
             }
@@ -266,7 +292,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                         PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                         if (otherPiece != null && otherPiece.color != pieceType.color)
                         {
-                            HighlightGround(targetLetterChar.ToString(), targetNumber); // ilumina posible captura
+                            HighlightGroundCaptured(targetLetterChar.ToString(), targetNumber); // ilumina posible captura
                         }
                     }
                 }
@@ -300,7 +326,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number); // posible captura
+                    HighlightGroundCaptured(letter.ToString(), number); // posible captura
                 }
                 break;
             }
@@ -326,7 +352,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number);
+                    HighlightGroundCaptured(letter.ToString(), number);
                 }
                 break;
             }
@@ -352,7 +378,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number);
+                    HighlightGroundCaptured(letter.ToString(), number);
                 }
                 break;
             }
@@ -378,7 +404,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number);
+                    HighlightGroundCaptured(letter.ToString(), number);
                 }
                 break;
             }
@@ -405,7 +431,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(currentLetter, i);
+                    HighlightGroundCaptured(currentLetter, i);
                 }
                 break;
             }
@@ -426,7 +452,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(currentLetter, i);
+                    HighlightGroundCaptured(currentLetter, i);
                 }
                 break;
             }
@@ -447,7 +473,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(c.ToString(), currentNumber);
+                    HighlightGroundCaptured(c.ToString(), currentNumber);
                 }
                 break;
             }
@@ -468,7 +494,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(c.ToString(), currentNumber);
+                    HighlightGroundCaptured(c.ToString(), currentNumber);
                 }
                 break;
             }
@@ -493,7 +519,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number); // posible captura
+                    HighlightGroundCaptured(letter.ToString(), number); // posible captura
                 }
                 break;
             }
@@ -519,7 +545,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number);
+                    HighlightGroundCaptured(letter.ToString(), number);
                 }
                 break;
             }
@@ -545,7 +571,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number);
+                    HighlightGroundCaptured(letter.ToString(), number);
                 }
                 break;
             }
@@ -571,7 +597,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(letter.ToString(), number);
+                    HighlightGroundCaptured(letter.ToString(), number);
                 }
                 break;
             }
@@ -607,7 +633,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 PieceType otherPiece = m.occupiedBy.GetComponent<PieceType>();
                 if (otherPiece != null && otherPiece.color != pieceType.color)
                 {
-                    HighlightGround(targetLetterchar.ToString(), targetNumber); // ilumina posible captura
+                    HighlightGroundCaptured(targetLetterchar.ToString(), targetNumber); // ilumina posible captura
                 }
             }
         }
@@ -669,11 +695,33 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             }
         }
     }
+    void HighlightGroundCaptured(string letra, int numero)
+    {
+        letterCaptured = letra;
+        numberCaptured = numero;
+        foreach (var m in map.maps)
+        {
+            if (m.name == letra && m.number == numero)
+            {
+                MeshRenderer mr = m.ground.GetComponent<MeshRenderer>();
+                if (mr != null)
+                {
+                    mr.material = CapturedlightMaterial;
+                    piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letra, numero));
+                }
+
+                if (!validMoves.Contains((letra, numero)))
+                    validMoves.Add((letra, numero));
+            }
+        }
+    }
     #endregion
 
     #region CheckCapture
     void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
     {
+        letterCaptured = letter;
+        numberCaptured = number;
         foreach (var m in map.maps)
         {
             if (m.name == letter && m.number == number && m.occupiedBy != null)
@@ -682,8 +730,9 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 if (otherPiece != null && otherPiece.color != myColor)
                 {
                     MeshRenderer mr = m.ground.GetComponent<MeshRenderer>();
+                    piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letter, number));
                     if (mr != null)
-                        mr.material = highlightMaterial;
+                        mr.material = CapturedlightMaterial;
                 }
             }
         }

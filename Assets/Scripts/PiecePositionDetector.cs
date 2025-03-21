@@ -22,8 +22,6 @@ public class PiecePositionDetector : MonoBehaviour
     void Update()
     {
         DetectCurrentPosition();
-        if(Input.GetKeyDown(KeyCode.Escape))
-        DetectStartPosition();
     }
 
     void DetectCurrentPosition()
@@ -101,7 +99,7 @@ public class PiecePositionDetector : MonoBehaviour
         return currentNumber;
     }
 
-    public bool VerifyPlay()
+    public bool VerifyPlay(GameObject piece)
     {
         for (int i = 0; i < positionPosible.Count; i++) {
 
@@ -110,6 +108,7 @@ public class PiecePositionDetector : MonoBehaviour
                 Debug.Log("HOLA");
                 currentLetterBefore = currentLetter;
                 currentNumberBefore = currentNumber;
+                //arrayMap.CenterPiece(piece, currentLetter, currentNumber);
                 return true;
             }
         }

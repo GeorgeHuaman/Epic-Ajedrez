@@ -33,7 +33,16 @@ public class ArrayMap : MonoBehaviour
         }
         UpdateMapOccupancy();
     }
-
+    public void CenterPiece(GameObject piece, string letter, int number)
+    {
+        for (int i = 0; i < maps.Count; i++)
+        {
+            if (maps[i].name == letter && maps[i].number == number)
+            {
+                piece.transform.position = maps[i].ground.transform.position;
+            }
+        }
+    }
     private void CoordinateGround(int i, int j, Coordinate coordinate)
     {
         coordinate.number = i + 1;
