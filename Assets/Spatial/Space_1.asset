@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Space_1
   m_EditorClassIdentifier: 
   version: 1
-  sku: 
+  sku: bp1f94bqf2t9y36d5gc2p9af
   packageName: Ajedrez
-  thumbnail: {fileID: 2800000, guid: ec6e61a8993a64290991cfc322ec43ea, type: 3}
+  thumbnail: {fileID: 2800000, guid: 827ea9a2f14d7be46ad133e5c1e33403, type: 3}
   savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
     type: 2}
-  worldID: 
+  worldID: 0fxf4zc2ep7892aybysti
   scene: {fileID: 102900000, guid: d10ce6bc5022e35408c25e092eafec4a, type: 3}
   csharpAssembly: {fileID: 5897886265953266890, guid: ff3fa44800ccaa84da364c3d362d2ce2,
     type: 3}
