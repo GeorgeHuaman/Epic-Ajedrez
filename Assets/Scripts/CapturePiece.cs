@@ -11,7 +11,6 @@ public class CapturePiece : MonoBehaviour
 
     public void CapturedPiece(GameObject piece)
     {
-        piece.GetComponent<SpatialInteractable>().enabled = false;
         for (int i = 0; i < captured.Count; i++)
         {
             if (captured[i].ocupade == false)

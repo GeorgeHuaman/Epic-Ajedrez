@@ -11,8 +11,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     private GameObject piece;
     private bool isGrab;
     public Table table;
-    public CapturePiece white;
-    public CapturePiece black;
     private Vector3 initialPiecePosition;
     private List<(string, int)> validMoves = new();
     private string letterCaptured;
@@ -28,7 +26,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     public ArrayMap map;
     private void Start()
     {
-        table = Table.instance;
     }
     private void Update()
     {
@@ -51,53 +48,13 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
         else
         {
             GiveControl(this.piece);
-            if (piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece))
-            {
-                piece.GetComponent<PiecePositionDetector>().ResetList();
-                TurnWhite(this.piece);
-            }
-            else
-            piece.GetComponent<PiecePositionDetector>().CorrectPosition();
+            piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece);
             isGrab = false;
             ResetHighlights();
-            VerifyCaptured();
             map.UpdateMapOccupancy();
         }
     }
 
-    private void VerifyCaptured()
-    {
-       PiecePositionDetector detector = piece.GetComponent<PiecePositionDetector>();
-       PieceType pieceType = piece.GetComponent<PieceType>();
-        if (letterCaptured == detector.currentLetter && numberCaptured == detector.currentNumber)
-        {
-            for (int i = 0; i < map.maps.Count; i++)
-            {
-                if( map.maps[i].name == letterCaptured && map.maps[i].number == numberCaptured)
-                {
-                    if (pieceType.color == PieceType.PieceColor.Blanco)
-                        black.CapturedPiece(map.maps[i].occupiedBy);
-                    else
-                        white.CapturedPiece(map.maps[i].occupiedBy);
-                    break;
-                }
-            }
-            this.piece = null;
-        }
-    }
-
-    private void TurnWhite(GameObject piece)
-    {
-        GiveControlTurn();
-        if (piece.GetComponent<PieceType>().color == PieceType.PieceColor.Blanco)
-        {
-            turnWhite.value = true;
-        }
-        else
-        {
-            turnWhite.value = false ;
-        }
-    }
     public void CalculatePieceMove()
     {
         ResetHighlights();
@@ -656,14 +613,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     }
     public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
     {
-        if (args.changedVariables.ContainsKey(turnWhite.id))
-        {
-            if (turnWhite)
-                table.TurnBlack();
-
-            else
-                table.TurnWhite();
-        }
     }
     #endregion
 
@@ -741,7 +690,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
 
     public void ResetPosition()
     {
-        foreach(var whrite in table.blancos)
+        foreach (var whrite in table.blancos)
         {
             if (whrite != null)
             {
@@ -758,7 +707,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             }
         }
         GiveControlTurn();
-        turnWhite.value = false;
     }
 
 }

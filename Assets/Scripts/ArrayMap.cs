@@ -39,7 +39,13 @@ public class ArrayMap : MonoBehaviour
         {
             if (maps[i].name == letter && maps[i].number == number)
             {
-                piece.transform.position = maps[i].ground.transform.position;
+                if (maps[i].occupiedBy == null)
+                {
+                    piece.transform.position = maps[i].ground.transform.position;
+                    maps[i].beforeOccupiedBy = maps[i].occupiedBy;
+                }
+                else
+                    piece.transform.position = maps[i].ground.transform.position;
             }
         }
     }
@@ -107,6 +113,7 @@ public class ArrayMap : MonoBehaviour
         public string name;
         public int number;
         public GameObject occupiedBy;
+        public GameObject beforeOccupiedBy;
 
         public Map(GameObject ground, string name, int number)
         {
@@ -114,6 +121,7 @@ public class ArrayMap : MonoBehaviour
             this.name = name;
             this.number = number;
             this.occupiedBy = null;
+            this.beforeOccupiedBy = null;
         }
     }
 }
