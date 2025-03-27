@@ -1,3 +1,4 @@
+using SpatialSys.UnitySDK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,8 +75,21 @@ public class ArrayMap : MonoBehaviour
                 if (m.name == letra && m.number == numero)
                 {
                     m.occupiedBy = pieceDetector.gameObject;
+                    if (pieceDetector.gameObject.GetComponent<PieceType>().type == PieceType.Type.Peon)
+                    {
+                        if (pieceDetector.gameObject.GetComponent<PieceType>().color == PieceType.PieceColor.Blanco && numero == 8 ||
+                        pieceDetector.gameObject.GetComponent<PieceType>().color == PieceType.PieceColor.Negro && numero == 1)
+                        {
+                            SpatialBridge.coreGUIService.DisplayToastMessage("LLegada al borde, se puede promocionar el peón");
+                        }
+                    }
+                    
                     break;
                 }
+
+                
+
+
             }
         }
     }
