@@ -4471,15 +4471,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1c437d99c9a4616adbe21f3ffa0e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Interact
+  interactText: Elegir Negras
   textFontOverride:
     overrideFont: 0
     font: {fileID: 0}
     material: {fileID: 0}
   iconType: 0
   icon: {fileID: 0}
-  interactiveRadius: 5
-  visibilityRadius: 10
+  interactiveRadius: 2.5
+  visibilityRadius: 5
   onInteractEvent:
     id: 0
     unityEventIsSynced: 0
@@ -4748,15 +4748,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1c437d99c9a4616adbe21f3ffa0e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Interact
+  interactText: Elegir Blancas
   textFontOverride:
     overrideFont: 0
     font: {fileID: 0}
     material: {fileID: 0}
   iconType: 0
   icon: {fileID: 0}
-  interactiveRadius: 5
-  visibilityRadius: 10
+  interactiveRadius: 2.5
+  visibilityRadius: 5
   onInteractEvent:
     id: 0
     unityEventIsSynced: 0
