@@ -7,7 +7,7 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
 {
-    private NetworkVariable<bool> turnWhite = new(initialValue: false);
+    public Team team;
     private GameObject piece;
     private bool isGrab;
     public Table table;
@@ -24,9 +24,8 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     
 
     public ArrayMap map;
-    private void Start()
-    {
-    }
+    private bool once = true;
+
     private void Update()
     {
         if (isGrab)
@@ -36,6 +35,11 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     }
     public void Grab(GameObject piece)
     {
+        if (once && team.isWhite)
+        {
+            Timers.instance.StartWhiteTimer();
+            once = false;
+        }
         if (!isGrab)
         {
             this.piece = piece;

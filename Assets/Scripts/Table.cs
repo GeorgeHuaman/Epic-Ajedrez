@@ -3,12 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : MonoBehaviour
+public class Table : SpatialNetworkBehaviour, IVariablesChanged
 {
     public List<GameObject> blancos = new List<GameObject>();
     public List<GameObject> negros = new List<GameObject>();
     public static Table instance;
 
+    private NetworkVariable<bool> turnWhite = new(initialValue: true);
+
+    private IInputService inputService;
+
+    private void Start()
+    {
+        inputService = SpatialBridge.inputService;
+        instance = this;
+        SelectWrite();
+    }
+    public void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            NextTurn();
+        }
+    }
+    public void NextTurn()
+    {
+        GiveControl();
+        if (turnWhite.value == true)
+        {
+            turnWhite.value = false;
+            Timers.instance.StartBlackTimer();
+        }
+            
+        else
+        {
+            turnWhite.value = true;
+            Timers.instance.StartWhiteTimer();
+        }
+        
+    }
+    public void TurnForBlack()
+    {
+        GiveControl();
+        turnWhite.value = false;
+    }
 
     public void SelectBlack()
     {
@@ -34,5 +73,24 @@ public class Table : MonoBehaviour
             go.GetComponent<SpatialInteractable>().enabled = false;
         }
     }
+    public void GiveControl()
+    {
+        SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
+        obj.RequestOwnership();
+    }
 
+    public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
+    {
+        if (args.changedVariables.ContainsKey(turnWhite.id))
+        {
+            if (turnWhite.value == true)
+            {
+                SelectWrite();
+            }
+            else
+            {
+                SelectBlack();
+            }
+        }
+    }
 }
