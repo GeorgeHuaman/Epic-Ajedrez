@@ -55,6 +55,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece);
             isGrab = false;
             ResetHighlights();
+            piece.GetComponent<PiecePositionDetector>().ObtainPieceCapture();
             map.UpdateMapOccupancy();
         }
     }

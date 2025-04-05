@@ -47,23 +47,31 @@ public class Timers : SpatialNetworkBehaviour, IVariablesChanged
     }
     public void CountDownWhite()
     {
-        countdownWhiteTime.value -= Time.deltaTime;
-
-        if (countdownWhiteTime <= 0)
+        if (hasControl)
         {
-            countdownWhiteTime.value = 0;
-            isRunningWhite = false;
+            countdownWhiteTime.value -= Time.deltaTime;
+
+            if (countdownWhiteTime <= 0)
+            {
+                countdownWhiteTime.value = 0;
+                isRunningWhite = false;
+            }
         }
+        
     }
     public void CountDownBlack()
     {
-        countdownBlackTime.value -= Time.deltaTime;
-
-        if (countdownBlackTime <= 0)
+        if (hasControl)
         {
-            countdownBlackTime.value = 0;
-            isRunningBlack = false;
+            countdownBlackTime.value -= Time.deltaTime;
+
+            if (countdownBlackTime <= 0)
+            {
+                countdownBlackTime.value = 0;
+                isRunningBlack = false;
+            }
         }
+        
     }
     public void StopWhite()
     {
