@@ -10,14 +10,12 @@ public class Table : SpatialNetworkBehaviour, IVariablesChanged
     public static Table instance;
 
     private NetworkVariable<bool> turnWhite = new(initialValue: true);
-
-    private IInputService inputService;
-
+    public Team team;
+    public bool once;
     private void Start()
     {
-        inputService = SpatialBridge.inputService;
         instance = this;
-        SelectWrite();
+        //SelectWrite();
     }
     public void Update()
     {
@@ -61,11 +59,22 @@ public class Table : SpatialNetworkBehaviour, IVariablesChanged
         }
     }
     public void SelectWrite()
-
     {
         foreach (GameObject go in blancos)
         {
             go.GetComponent<SpatialInteractable>().enabled = true;
+        }
+
+        foreach (GameObject go in negros)
+        {
+            go.GetComponent<SpatialInteractable>().enabled = false;
+        }
+    }
+    public void DisableAll()
+    {
+        foreach (GameObject go in blancos)
+        {
+            go.GetComponent<SpatialInteractable>().enabled = false;
         }
 
         foreach (GameObject go in negros)
@@ -83,13 +92,20 @@ public class Table : SpatialNetworkBehaviour, IVariablesChanged
     {
         if (args.changedVariables.ContainsKey(turnWhite.id))
         {
-            if (turnWhite.value == true)
+            if (!once)
             {
-                SelectWrite();
+                once = true;
             }
             else
             {
-                SelectBlack();
+                if (turnWhite.value == true)
+                {
+                    SelectWrite();
+                }
+                else
+                {
+                    SelectBlack();
+                }
             }
         }
     }

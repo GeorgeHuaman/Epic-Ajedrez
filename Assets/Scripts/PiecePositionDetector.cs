@@ -2,8 +2,9 @@ using SpatialSys.UnitySDK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
-public class PiecePositionDetector : SpatialNetworkBehaviour
+public class PiecePositionDetector : SpatialNetworkBehaviour,IVariablesChanged
 {
     public string currentLetter;
     public int currentNumber;
@@ -13,9 +14,9 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
     public CapturePiece black;
     public GameObject groundFather;
     public Vector3 initialPosition;
-    public bool life;
+    public NetworkVariable<bool> inGame = new(initialValue: true);
     public GameObject pieceCaptured;
-    public ArrayMap map;
+    public GrabPiece grabPiece;
 
     public Transform positionCapture;
         
@@ -23,15 +24,63 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
     {
         StartCoroutine(PositionInitial());
         initialPosition = transform.position;
+        inGame.value = true;
     }
 
     void Update()
     {
         DetectCurrentPosition();
+        if (inGame.value) 
+        { 
+        }
+
     }
 
     void DetectCurrentPosition()
     {
+        //if (!inGame)
+        //{
+        //    currentLetter = string.Empty;
+        //    currentNumber = 0;
+        //}
+        //else
+        //{
+
+        //    float minDistance = float.MaxValue;
+        //    string closestLetter = "";
+        //    int closestNumber = 0;
+
+        //    foreach (Transform child in groundFather.transform)
+        //    {
+        //        Coordinate coord = child.GetComponent<Coordinate>();
+        //        if (coord != null)
+        //        {
+        //            float distance = Vector3.Distance(transform.position, child.position);
+        //            if (distance < minDistance)
+        //            {
+        //                minDistance = distance;
+        //                closestLetter = coord.letra;
+        //                closestNumber = coord.number;
+        //            }
+        //        }
+        //    }
+
+        //    if (closestLetter != currentLetter || closestNumber != currentNumber)
+        //    {
+        //        currentLetter = closestLetter;
+        //        currentNumber = closestNumber;
+        //    }
+
+        //}
+        float maxDetectDistance = 1.5f; // Distancia máxima que se permite para detectar una casilla
+
+        if (!inGame)
+        {
+            currentLetter = string.Empty;
+            currentNumber = 0;
+        }
+        else
+        {
             float minDistance = float.MaxValue;
             string closestLetter = "";
             int closestNumber = 0;
@@ -51,21 +100,38 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
                 }
             }
 
-            if (closestLetter != currentLetter || closestNumber != currentNumber)
+            // Aquí revisamos si la pieza está lo suficientemente cerca de una casilla
+            if (minDistance <= maxDetectDistance)
             {
-                currentLetter = closestLetter;
-                currentNumber = closestNumber;
+                if (closestLetter != currentLetter || closestNumber != currentNumber)
+                {
+                    currentLetter = closestLetter;
+                    currentNumber = closestNumber;
+                }
             }
+            else
+            {
+                // Si está demasiado lejos, puedes hacer algo aquí:
+                Debug.Log("La pieza está fuera de rango de cualquier casilla");
 
+                // Ejemplo: marcar que está fuera del tablero
+                currentLetter = string.Empty;
+                currentNumber = 0;
+                inGame.value = false;
 
+                // O llamar a otro método (como eliminarla o mostrar mensaje)
+                // OutOfBoard();
+            }
+        }
     }
 
     public void ObtainPieceCapture()
     {
         GiveControl();
-        foreach (ArrayMap.Map item in map.maps)
+        foreach (ArrayMap.Map item in arrayMap.maps)
         {
-            if (item.occupiedBy!= null && item.name == currentLetter && item.number == currentNumber)
+            if (item.occupiedBy != null && item.name == currentLetter && item.number == currentNumber && grabPiece.validMoves.Contains((currentLetter, currentNumber)))
+            //if (item.occupiedBy != null && item.name == currentLetter && item.number == currentNumber && grabPiece.letterCaptured == currentLetter && grabPiece.numberCaptured == currentNumber)
             {
                 PieceType pieceType = GetComponent<PieceType>();
                 PieceType pieceTypeOther = item.occupiedBy.GetComponent<PieceType>();
@@ -86,11 +152,16 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
 
     public void Capture()
     {
+        GiveControl();
         if (pieceCaptured)
         {
-            pieceCaptured.GetComponent<PiecePositionDetector>().GiveControl();
-            pieceCaptured.transform.position = pieceCaptured.GetComponent<PiecePositionDetector>().positionCapture.position;
+            PiecePositionDetector piecePosCapture = pieceCaptured.GetComponent<PiecePositionDetector>();
+            piecePosCapture.GiveControl();
+            piecePosCapture.transform.position = piecePosCapture.positionCapture.position;
+            piecePosCapture.inGame.value = false;
+            arrayMap.UpdateMapOccupancy();
             pieceCaptured = null;
+            
         }
     }
     void DetectStartPosition()
@@ -114,6 +185,11 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
             }
         }
 
+    }
+    public void EnablePiece()
+    {
+        GiveControl();
+        inGame.value = true;
     }
 
     public string GetCurrentLetter()
@@ -141,5 +217,13 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
     {
         SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
         obj.RequestOwnership();
+    }
+
+    public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
+    {
+        if (args.changedVariables.ContainsKey(inGame.id))
+        {
+            arrayMap.UpdateMapOccupancy();
+        }
     }
 }

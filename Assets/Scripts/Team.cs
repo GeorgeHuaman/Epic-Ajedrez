@@ -10,6 +10,7 @@ public class Team : MonoBehaviour
     public void SelectWhite()
     {
         isWhite = true;
+        Table.instance.SelectWrite();
     }
     public void SelectBlack()
     {
