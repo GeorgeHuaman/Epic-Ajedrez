@@ -20,10 +20,10 @@ public class Table : SpatialNetworkBehaviour, IVariablesChanged
     public void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            NextTurn();
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    NextTurn();
+        //}
     }
     public void NextTurn()
     {

@@ -706,11 +706,15 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
 
     public void ResetPosition()
     {
+        GiveControlTurn();
+        PanelVictory.instance.ResetText();
+        Timers.instance.ResetTime();
         foreach (var whrite in table.blancos)
         {
             if (whrite != null)
             {
                 GiveControl(whrite);
+                whrite.GetComponent<PiecePositionDetector>().EnablePiece();
                 whrite.transform.position = whrite.GetComponent<PiecePositionDetector>().initialPosition;
             }
         }
@@ -719,10 +723,12 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             if (black != null)
             {
                 GiveControl(black);
+                black.GetComponent<PiecePositionDetector>().EnablePiece();
                 black.transform.position = black.GetComponent<PiecePositionDetector>().initialPosition;
             }
         }
-        GiveControlTurn();
+        Table.instance.SelectWrite();
+        
     }
     public void CheckValidMove()
     {

@@ -33,6 +33,14 @@ public class Timers : SpatialNetworkBehaviour, IVariablesChanged
             CountDownBlack();
         }
     }
+    public void ResetTime()
+    {
+        GiveControl();
+        isRunningWhite = false;
+        isRunningBlack = false;
+        countdownWhiteTime.value = 1800f;
+        countdownBlackTime.value = 1800f;
+    }
     public void StartWhiteTimer()
     {
         GiveControl();
@@ -84,7 +92,7 @@ public class Timers : SpatialNetworkBehaviour, IVariablesChanged
     public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
     {
 
-        if (args.changedVariables.ContainsKey(countdownWhiteTime.id) || args.changedVariables.ContainsKey(countdownBlackTime.id))
+        if (args.changedVariables.ContainsKey(countdownWhiteTime.id) || args.changedVariables.ContainsKey(countdownBlackTime.id) && hasControl)
         {
             UpdateText();
         }
