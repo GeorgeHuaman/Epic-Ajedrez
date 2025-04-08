@@ -10,17 +10,20 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     private GameObject piece;
     private bool isGrab;
     public Table table;
+    private bool king = false;
+    private int kingMove = 0;
     private Vector3 initialPiecePosition;
     public List<(string, int)> validMoves = new();
-    [HideInInspector]public string letterCaptured;
-    [HideInInspector]public int numberCaptured;
+    [HideInInspector] public string letterCaptured;
+    [HideInInspector] public int numberCaptured;
 
     [Header("GroundMaterials")]
     public Material defaultMaterial;
     public Material highlightMaterial;
     public Material CapturedlightMaterial;
+    public Material enroqueLightMaterial;
     public PiecePositionDetector positionDetector;
-    
+
 
     public ArrayMap map;
     private NetworkVariable<bool> once = new(initialValue: false);
@@ -46,12 +49,17 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             GiveControl(this.piece);
             validMoves.Clear();
             map.UpdateMapOccupancy();
-            initialPiecePosition = piece.transform.position; 
+            initialPiecePosition = piece.transform.position;
             CalculatePieceMove();
             isGrab = true;
         }
         else
         {
+            if (king)
+            {
+                kingMove++;
+                king = false;
+            }
             GiveControl(this.piece);
             //piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece);
             CheckValidMove();
@@ -576,25 +584,26 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     }
     public void CheckKingMove(PieceType pieceType)
     {
+        king = true;
         PiecePositionDetector piecePositionDetector = piece.GetComponent<PiecePositionDetector>();
         string currentLetter = piecePositionDetector.currentLetter;
         int currentNumber = piecePositionDetector.currentNumber;
         char currentLetterChar = currentLetter[0];
 
-        List<(int, int)> direction = new ()
+        List<(int, int)> direction = new()
         { (1,0), (-1,0), (0,1), (0,-1), (1,1),(-1,1),(1,-1),(-1,-1)};
 
-        foreach (var dir in direction) 
-        { 
-          char targetLetterchar = (char)(currentLetterChar+ dir.Item1);
-          int targetNumber = currentNumber + dir.Item2;
-            if(targetLetterchar < 'A' ||  targetLetterchar > 'H' || targetNumber < 1 || targetNumber > 8)
+        foreach (var dir in direction)
+        {
+            char targetLetterchar = (char)(currentLetterChar + dir.Item1);
+            int targetNumber = currentNumber + dir.Item2;
+            if (targetLetterchar < 'A' || targetLetterchar > 'H' || targetNumber < 1 || targetNumber > 8)
             {
                 continue;
 
             }
             var m = map.GetMap(targetLetterchar.ToString(), targetNumber);
-            if (m == null) {continue;}
+            if (m == null) { continue; }
             if (m.occupiedBy == null)
             {
                 HighlightGround(targetLetterchar.ToString(), targetNumber);
@@ -608,7 +617,49 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 }
             }
         }
+        //if (kingMove == 0)
+        //{
+        //    bool move = false;
+        //    for (char c = (char)(currentLetterChar + 1); c <= 'H'; c++)
+        //    {
+        //        var m = map.GetMap(c.ToString(), currentNumber);
+        //        string a = c.ToString();
+        //        if (m.occupiedBy != null && m.occupiedBy.GetComponent<PieceType>().type != PieceType.Type.Torre )
+        //        {
+        //            move = true;
+        //            break;
+        //        }
+        //        if (a =="H" && move == false)
+        //        {
+        //            if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color)
+        //            {
+        //                HighlightGroundTowerKing(c.ToString(), currentNumber);
+        //            }
+        //        }
+                
+        //    }
+        //    move = false;
+        //    for (char c = (char)(currentLetterChar - 1); c >= 'A'; c--)
+        //    {
+        //        var m = map.GetMap(c.ToString(), currentNumber);
+        //        string a = c.ToString();
+        //        if (m.occupiedBy != null && m.occupiedBy.GetComponent<PieceType>().type != PieceType.Type.Torre )
+        //        {
+        //            move = true;
+        //            break;
+        //        }
+        //        if (a == "A" && move == false)
+        //        {
+        //            if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color)
+        //            {
+        //                HighlightGroundTowerKing(c.ToString(), currentNumber);
+        //            }
+        //        }
+        //    }
+        //}
     }
+    
+    
     #endregion
     #region NetworkControl
     public void GiveControlTurn()
@@ -678,10 +729,30 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             }
         }
     }
-    #endregion
+    void HighlightGroundTowerKing(string letra, int numero)
+    {
+        letterCaptured = letra;
+        numberCaptured = numero;
+        foreach (var m in map.maps)
+        {
+            if (m.name == letra && m.number == numero)
+            {
+                MeshRenderer mr = m.ground.GetComponent<MeshRenderer>();
+                if (mr != null)
+                {
+                    mr.material = enroqueLightMaterial;
+                    piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letra, numero));
+                }
 
-    #region CheckCapture
-    void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
+                if (!validMoves.Contains((letra, numero)))
+                    validMoves.Add((letra, numero));
+            }
+        }
+    }
+#endregion
+
+#region CheckCapture
+void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
     {
         letterCaptured = letter;
         numberCaptured = number;

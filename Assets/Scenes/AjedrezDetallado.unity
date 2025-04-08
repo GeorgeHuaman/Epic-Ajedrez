@@ -607,6 +607,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 826485056, guid: 6af416212fd301947b9346a990eea880, type: 3}
+      propertyPath: enroqueLightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f47bdd8a792336a43b29f3439e08579c, type: 2}
+    - target: {fileID: 826485056, guid: 6af416212fd301947b9346a990eea880, type: 3}
       propertyPath: CapturedlightMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 51679d61f4e1bc343ad1ba927e43672d, type: 2}
