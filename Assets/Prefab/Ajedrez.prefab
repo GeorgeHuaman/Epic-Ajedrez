@@ -45,11 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bfd126f9f32ef428469b29611ebd38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: {fileID: 0}
-  table: {fileID: 0}
+  table: {fileID: 693191347}
   defaultMaterial: {fileID: 2100000, guid: 9ba5c526d21e5874c97c8af9f390748f, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 10c8d608942dc024a8355192ca5b3e2e, type: 2}
-  CapturedlightMaterial: {fileID: 0}
   positionDetector: {fileID: 0}
   map: {fileID: 1686847677}
 --- !u!114 &116011337
@@ -2715,12 +2713,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725430411299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,12 +2865,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725435104766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,12 +3017,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725478211048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,12 +3169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725617834711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,12 +3321,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725714900247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,12 +3473,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725753197560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,12 +3625,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338725843689410
 GameObject:
   m_ObjectHideFlags: 0
@@ -3786,12 +3777,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726050189867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3939,12 +3929,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726052179193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,12 +4081,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726102544844
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,12 +4233,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726126759450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4398,12 +4385,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726177932539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,12 +4537,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726293919253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,12 +4689,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726300928415
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,12 +4841,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726454880660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,12 +4993,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726471226735
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,12 +5145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726481244892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5316,12 +5297,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726562280661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,12 +5449,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726690651804
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,12 +5601,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726783827651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,12 +5753,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726879639824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5928,12 +5905,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726924271891
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,12 +6057,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338726924417009
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,12 +6209,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727115449135
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,12 +6361,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727141277583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6540,12 +6513,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727239915127
 GameObject:
   m_ObjectHideFlags: 0
@@ -6693,12 +6665,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727267076164
 GameObject:
   m_ObjectHideFlags: 0
@@ -6846,12 +6817,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727298433689
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,12 +6969,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727312104771
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,12 +7121,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727341596720
 GameObject:
   m_ObjectHideFlags: 0
@@ -7305,12 +7273,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7350338727375879674
 GameObject:
   m_ObjectHideFlags: 0
@@ -7458,12 +7425,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLetter: 
   currentNumber: 0
+  currentLetterBefore: 
+  currentNumberBefore: 0
   arrayMap: {fileID: 1686847677}
-  white: {fileID: 0}
-  black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  life: 0
 --- !u!1 &7443661072960189496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7641,6 +7607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7028746130319013250}
+  - component: {fileID: 693191347}
   m_Layer: 0
   m_Name: Ajedrez
   m_TagString: Untagged
@@ -7699,6 +7666,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693191347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7692376797553405752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7753a5cac8f2f4c9bef4706945a07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blancos:
+  - {fileID: 7350338726783827651}
+  - {fileID: 7350338726050189867}
+  - {fileID: 7350338726879639824}
+  - {fileID: 7350338725843689410}
+  - {fileID: 7350338727312104771}
+  - {fileID: 7350338725430411299}
+  - {fileID: 7350338726924271891}
+  - {fileID: 7350338727141277583}
+  - {fileID: 7350338726126759450}
+  - {fileID: 7350338727239915127}
+  - {fileID: 7350338726300928415}
+  - {fileID: 7350338726293919253}
+  - {fileID: 7350338726454880660}
+  - {fileID: 7350338725617834711}
+  - {fileID: 7350338727298433689}
+  - {fileID: 7350338725714900247}
+  negros:
+  - {fileID: 7350338727267076164}
+  - {fileID: 7350338726052179193}
+  - {fileID: 7350338725435104766}
+  - {fileID: 7350338725425850556}
+  - {fileID: 7350338727375879674}
+  - {fileID: 7350338726690651804}
+  - {fileID: 7350338725478211048}
+  - {fileID: 7350338726562280661}
+  - {fileID: 7350338726924417009}
+  - {fileID: 7350338725753197560}
+  - {fileID: 7350338726177932539}
+  - {fileID: 7350338726471226735}
+  - {fileID: 7350338727115449135}
+  - {fileID: 7350338727341596720}
+  - {fileID: 7350338726481244892}
+  - {fileID: 7350338726102544844}
 --- !u!1 &8237899329421784061
 GameObject:
   m_ObjectHideFlags: 0
