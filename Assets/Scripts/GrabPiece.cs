@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
 {
@@ -11,9 +12,9 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     private bool isGrab;
     public Table table;
     private Vector3 initialPiecePosition;
-    public List<(string, int)> validMoves = new();
-    [HideInInspector]public string letterCaptured;
-    [HideInInspector]public int numberCaptured;
+    private List<(string, int)> validMoves = new();
+    private string letterCaptured;
+    private int numberCaptured;
 
     [Header("GroundMaterials")]
     public Material defaultMaterial;
@@ -23,7 +24,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     
 
     public ArrayMap map;
-    private NetworkVariable<bool> once = new(initialValue: false);
+    private bool once = true;
 
     private void Update()
     {
@@ -34,45 +35,35 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     }
     public void Grab(GameObject piece)
     {
-        if (!once)
+        if (once && team.isWhite)
         {
-            GiveControlTurn();
             Timers.instance.StartWhiteTimer();
-            once.value = true;
+            once = false;
         }
         if (!isGrab)
         {
             this.piece = piece;
             GiveControl(this.piece);
-            validMoves.Clear();
             map.UpdateMapOccupancy();
-            initialPiecePosition = piece.transform.position; 
-            CalculatePieceMove();
+            initialPiecePosition = piece.transform.position;
             isGrab = true;
+            CalculatePieceMove();
         }
         else
         {
             GiveControl(this.piece);
-            //piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece);
-            CheckValidMove();
+            piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece);
+            isGrab = false;
             ResetHighlights();
             piece.GetComponent<PiecePositionDetector>().ObtainPieceCapture();
             map.UpdateMapOccupancy();
-            if (piece.GetComponent<PiecePositionDetector>().inGame == false)
-            {
-                piece.GetComponent<PiecePositionDetector>().EnablePiece();
-            }
-            isGrab = false;
         }
     }
 
     public void CalculatePieceMove()
     {
         ResetHighlights();
-        if (piece.GetComponent<PiecePositionDetector>().currentNumber == 0)
-        {
-            return;
-        }
+
         PieceType pieceType = piece.GetComponent<PieceType>();
         int direction = (pieceType.color == PieceType.PieceColor.Blanco) ? 1 : -1;
 
@@ -696,8 +687,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                     piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letter, number));
                     if (mr != null)
                         mr.material = CapturedlightMaterial;
-                    if (!validMoves.Contains((letter, number)))
-                        validMoves.Add((letter, number));
                 }
             }
         }
@@ -723,23 +712,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             }
         }
         GiveControlTurn();
-    }
-    public void CheckValidMove()
-    {
-        PiecePositionDetector piecePos = piece.GetComponent<PiecePositionDetector>();
-
-        if (!piecePos.inGame)
-            return;
-        if (piecePos.GetComponent<PieceType>().type == PieceType.Type.Peon && piecePos.currentNumber == 0 || piecePos.currentNumber == 8)
-            return;
-        if (!validMoves.Contains((piecePos.currentLetter,piecePos.currentNumber)))
-        {
-            piece.transform.position = initialPiecePosition;
-        }
-        else
-        {
-            Table.instance.NextTurn();
-        }
     }
 
 }
