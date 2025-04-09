@@ -22,6 +22,7 @@ public class PieceType : MonoBehaviour
     [Header("Chess Piece Info")]
     public Type type;
     public PieceColor color;
+    public int move = 0;
 
     
 }

@@ -11,7 +11,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     private bool isGrab;
     public Table table;
     private bool king = false;
-    private int kingMove = 0;
+    private bool rook = false;
     private Vector3 initialPiecePosition;
     public List<(string, int)> validMoves = new();
     [HideInInspector] public string letterCaptured;
@@ -55,11 +55,6 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
         }
         else
         {
-            if (king)
-            {
-                kingMove++;
-                king = false;
-            }
             GiveControl(this.piece);
             //piece.GetComponent<PiecePositionDetector>().VerifyPlay(piece);
             CheckValidMove();
@@ -70,6 +65,8 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             {
                 piece.GetComponent<PiecePositionDetector>().EnablePiece();
             }
+            king = false;
+            rook = false;
             isGrab = false;
         }
     }
@@ -147,6 +144,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     }
     private void CheckRookMove(PieceType pieceType)
     {
+        rook = true;
         PiecePositionDetector piecePositionDetector = piece.GetComponent<PiecePositionDetector>();
         string currentLetter = piecePositionDetector.currentLetter;
         int currentNumber = piecePositionDetector.currentNumber;
@@ -617,63 +615,65 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 }
             }
         }
-        //if (kingMove == 0)
-        //{
-        //    bool move = false;
-        //    for (char c = (char)(currentLetterChar + 1); c <= 'H'; c++)
-        //    {
-        //        var m = map.GetMap(c.ToString(), currentNumber);
-        //        string a = c.ToString();
-        //        if (m.occupiedBy != null && m.occupiedBy.GetComponent<PieceType>().type != PieceType.Type.Torre )
-        //        {
-        //            move = true;
-        //            break;
-        //        }
-        //        if (a =="H" && move == false)
-        //        {
-        //            if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color)
-        //            {
-        //                HighlightGroundTowerKing(c.ToString(), currentNumber);
-        //            }
-        //        }
-                
-        //    }
-        //    move = false;
-        //    for (char c = (char)(currentLetterChar - 1); c >= 'A'; c--)
-        //    {
-        //        var m = map.GetMap(c.ToString(), currentNumber);
-        //        string a = c.ToString();
-        //        if (m.occupiedBy != null && m.occupiedBy.GetComponent<PieceType>().type != PieceType.Type.Torre )
-        //        {
-        //            move = true;
-        //            break;
-        //        }
-        //        if (a == "A" && move == false)
-        //        {
-        //            if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color)
-        //            {
-        //                HighlightGroundTowerKing(c.ToString(), currentNumber);
-        //            }
-        //        }
-        //    }
-        //}
+        if (piece.GetComponent<PieceType>().move == 0)
+        {
+            bool moveA = false;
+            bool moveB = false;
+            for (char c = (char)(currentLetterChar + 1); c <= 'H'; c++)
+            {
+                var m = map.GetMap(c.ToString(), currentNumber);
+                string a = c.ToString();
+                if (m.occupiedBy != null && m.occupiedBy.GetComponent<PieceType>().type != PieceType.Type.Torre)
+                {
+                    moveA = true;
+                    break;
+                }
+                if (m.occupiedBy != null && a == "H" && moveA == false)
+                {
+                    if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color && m.occupiedBy.GetComponent<PieceType>().move == 0)
+                    {
+                        HighlightGroundTowerKing(c.ToString(), currentNumber);
+                    }
+                }
+
+            }
+            for (char c = (char)(currentLetterChar - 1); c >= 'A'; c--)
+            {
+                var m = map.GetMap(c.ToString(), currentNumber);
+                string a = c.ToString();
+                if (m.occupiedBy != null && m.occupiedBy.GetComponent<PieceType>().type != PieceType.Type.Torre)
+                {
+                    moveB = true;
+                    break;
+                }
+                if (m.occupiedBy != null && a == "A" && moveB == false)
+                {
+                    if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color && m.occupiedBy.GetComponent<PieceType>().move == 0)
+                    {
+                        HighlightGroundTowerKing(c.ToString(), currentNumber);
+                    }
+                }
+
+            }
+
+        }
     }
-    
-    
+
+
     #endregion
     #region NetworkControl
     public void GiveControlTurn()
     {
-            SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
-            obj.RequestOwnership();
+        SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
+        obj.RequestOwnership();
 
     }
     public void GiveControl(GameObject pieceNetwork)
     {
-            SpatialNetworkObject grab = GetComponent<SpatialNetworkObject>();
-            grab.RequestOwnership();
-            SpatialNetworkObject obj = pieceNetwork.GetComponent<SpatialNetworkObject>();
-            obj.RequestOwnership();
+        SpatialNetworkObject grab = GetComponent<SpatialNetworkObject>();
+        grab.RequestOwnership();
+        SpatialNetworkObject obj = pieceNetwork.GetComponent<SpatialNetworkObject>();
+        obj.RequestOwnership();
 
     }
     public void OnVariablesChanged(NetworkObjectVariablesChangedEventArgs args)
@@ -701,7 +701,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 if (mr != null)
                 {
                     mr.material = highlightMaterial;
-                    piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letra,numero));
+                    piece.GetComponent<PiecePositionDetector>().positionPosible.Add((letra, numero));
                 }
 
                 if (!validMoves.Contains((letra, numero)))
@@ -749,10 +749,10 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             }
         }
     }
-#endregion
+    #endregion
 
-#region CheckCapture
-void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
+    #region CheckCapture
+    void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
     {
         letterCaptured = letter;
         numberCaptured = number;
@@ -799,7 +799,7 @@ void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
             }
         }
         Table.instance.SelectWrite();
-        
+
     }
     public void CheckValidMove()
     {
@@ -809,14 +809,18 @@ void CheckCaptureMove(string letter, int number, PieceType.PieceColor myColor)
             return;
         if (piecePos.GetComponent<PieceType>().type == PieceType.Type.Peon && piecePos.currentNumber == 0 || piecePos.currentNumber == 8)
             return;
-        if (!validMoves.Contains((piecePos.currentLetter,piecePos.currentNumber)))
+        if (!validMoves.Contains((piecePos.currentLetter, piecePos.currentNumber)))
         {
             piece.transform.position = initialPiecePosition;
         }
         else
         {
+            if (king)
+                piece.GetComponent<PieceType>().move++;
+            if (rook)
+                piece.GetComponent<PieceType>().move++;
             Table.instance.NextTurn();
         }
-    }
 
+    }
 }
