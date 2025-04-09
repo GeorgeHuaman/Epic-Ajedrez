@@ -1,9 +1,8 @@
-using SpatialSys.UnitySDK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PiecePositionDetector : SpatialNetworkBehaviour
+public class PiecePositionDetector : MonoBehaviour
 {
     public string currentLetter;
     public int currentNumber;
@@ -14,11 +13,7 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
     public GameObject groundFather;
     public Vector3 initialPosition;
     public bool life;
-    public GameObject pieceCaptured;
-    public ArrayMap map;
 
-    public Transform positionCapture;
-        
     private void Start()
     {
         StartCoroutine(PositionInitial());
@@ -56,43 +51,22 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
                 currentLetter = closestLetter;
                 currentNumber = closestNumber;
             }
-
-
+        
     }
 
-    public void ObtainPieceCapture()
+    private void OutTable()
     {
-        GiveControl();
-        foreach (ArrayMap.Map item in map.maps)
+        PieceType.PieceColor colors = gameObject.GetComponent<PieceType>().color;
+        if (colors == PieceType.PieceColor.Blanco)
         {
-            if (item.occupiedBy!= null && item.name == currentLetter && item.number == currentNumber)
-            {
-                PieceType pieceType = GetComponent<PieceType>();
-                PieceType pieceTypeOther = item.occupiedBy.GetComponent<PieceType>();
-                if (pieceType.color != pieceTypeOther.color)
-                {
-                    pieceCaptured = item.occupiedBy;
-                    Capture();
-                    return;
-                }
-                
-            }
-            else
-            {
-                pieceCaptured = null;
-            }
+            white.CapturedPiece(this.gameObject);
+        }
+        else
+        {
+            black.CapturedPiece(this.gameObject);
         }
     }
 
-    public void Capture()
-    {
-        if (pieceCaptured)
-        {
-            pieceCaptured.GetComponent<PiecePositionDetector>().GiveControl();
-            pieceCaptured.transform.position = pieceCaptured.GetComponent<PiecePositionDetector>().positionCapture.position;
-            pieceCaptured = null;
-        }
-    }
     void DetectStartPosition()
     {
         float minDistance = float.MaxValue;
@@ -137,9 +111,5 @@ public class PiecePositionDetector : SpatialNetworkBehaviour
 
         DetectStartPosition();
     }
-    public void GiveControl()
-    {
-        SpatialNetworkObject obj = GetComponent<SpatialNetworkObject>();
-        obj.RequestOwnership();
-    }
+
 }
