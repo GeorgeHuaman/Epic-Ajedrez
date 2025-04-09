@@ -30,17 +30,8 @@ public class PiecePositionDetector : SpatialNetworkBehaviour,IVariablesChanged
     void Update()
     {
         DetectCurrentPosition();
-        if (GetComponent<PieceType>().type == PieceType.Type.Rey && inGame.value == false) 
-        {
-            switch (GetComponent<PieceType>().color)
-            {
-                case PieceType.PieceColor.Blanco:
-                    PanelVictory.instance.BlackWins();
-                    break;
-                case PieceType.PieceColor.Negro:
-                    PanelVictory.instance.WhiteWins();
-                    break;
-            }
+        if (inGame.value) 
+        { 
         }
 
     }
@@ -83,7 +74,7 @@ public class PiecePositionDetector : SpatialNetworkBehaviour,IVariablesChanged
         //}
         float maxDetectDistance = 1.5f; // Distancia máxima que se permite para detectar una casilla
 
-        if (!inGame.value)
+        if (!inGame)
         {
             currentLetter = string.Empty;
             currentNumber = 0;
@@ -126,11 +117,7 @@ public class PiecePositionDetector : SpatialNetworkBehaviour,IVariablesChanged
                 // Ejemplo: marcar que está fuera del tablero
                 currentLetter = string.Empty;
                 currentNumber = 0;
-                if (hasControl)
-                {
-                    inGame.value = false;
-                }
-                
+                inGame.value = false;
 
                 // O llamar a otro método (como eliminarla o mostrar mensaje)
                 // OutOfBoard();

@@ -23,5 +23,6 @@ public class PieceType : MonoBehaviour
     public Type type;
     public PieceColor color;
 
+
     
 }

@@ -47,8 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 0}
   table: {fileID: 0}
-  letterCaptured: 
-  numberCaptured: 0
   defaultMaterial: {fileID: 2100000, guid: 9ba5c526d21e5874c97c8af9f390748f, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 10c8d608942dc024a8355192ca5b3e2e, type: 2}
   CapturedlightMaterial: {fileID: 0}
@@ -296,7 +294,7 @@ GameObject:
   - component: {fileID: 1147644841749785228}
   - component: {fileID: 8053649099087360191}
   - component: {fileID: 5582043166337285796}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +378,7 @@ GameObject:
   - component: {fileID: 4346321006322830485}
   - component: {fileID: 5691875496406074488}
   - component: {fileID: 5327472149000436013}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +462,7 @@ GameObject:
   - component: {fileID: 1692209877106943724}
   - component: {fileID: 5155908080043753241}
   - component: {fileID: 4142828516249159192}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +546,7 @@ GameObject:
   - component: {fileID: 7388596010334220894}
   - component: {fileID: 1101650619796714165}
   - component: {fileID: 7313942046206846709}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +630,7 @@ GameObject:
   - component: {fileID: 3759805874617240047}
   - component: {fileID: 5637276776745254976}
   - component: {fileID: 5327011629103594704}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +714,7 @@ GameObject:
   - component: {fileID: 5767408833038385104}
   - component: {fileID: 5566170603618046514}
   - component: {fileID: 5334931134578386195}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +798,7 @@ GameObject:
   - component: {fileID: 6260733114380291959}
   - component: {fileID: 167093315165976981}
   - component: {fileID: 4531583740088461081}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +882,7 @@ GameObject:
   - component: {fileID: 3204400549108732180}
   - component: {fileID: 1173312839179120230}
   - component: {fileID: 6584694523062106842}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +966,7 @@ GameObject:
   - component: {fileID: 3241283345008421864}
   - component: {fileID: 7171816494066158387}
   - component: {fileID: 5896569456819359488}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,7 +1050,7 @@ GameObject:
   - component: {fileID: 1140605277385650316}
   - component: {fileID: 4680967499032113501}
   - component: {fileID: 1321038391060412712}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1134,7 @@ GameObject:
   - component: {fileID: 4274717154020179810}
   - component: {fileID: 4252171614372781402}
   - component: {fileID: 7361206333419752095}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1218,7 @@ GameObject:
   - component: {fileID: 262805340933190056}
   - component: {fileID: 156284631905953157}
   - component: {fileID: 3532674269744568451}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1304,7 +1302,7 @@ GameObject:
   - component: {fileID: 27230845407250013}
   - component: {fileID: 6861039504612100449}
   - component: {fileID: 3123323438858468962}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1388,7 +1386,7 @@ GameObject:
   - component: {fileID: 868522157996291238}
   - component: {fileID: 7372917677733657274}
   - component: {fileID: 4266841161014810728}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1470,7 @@ GameObject:
   - component: {fileID: 4140944287817187934}
   - component: {fileID: 1916472517572311632}
   - component: {fileID: 5363092913552248652}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Rey Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1556,7 +1554,7 @@ GameObject:
   - component: {fileID: 1538780087756322690}
   - component: {fileID: 5295858391585443829}
   - component: {fileID: 1235042393445782550}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1739,7 @@ GameObject:
   - component: {fileID: 82139370745881886}
   - component: {fileID: 369235403761728348}
   - component: {fileID: 1033475296725227371}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1823,7 @@ GameObject:
   - component: {fileID: 1979957765664497508}
   - component: {fileID: 568284891573792935}
   - component: {fileID: 8537980768353046668}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1907,7 @@ GameObject:
   - component: {fileID: 3398220892144747499}
   - component: {fileID: 4488339399030809625}
   - component: {fileID: 2392590613541904329}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PeonBlanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +1991,7 @@ GameObject:
   - component: {fileID: 2596453540942682808}
   - component: {fileID: 3372578216439026145}
   - component: {fileID: 8363027437002341046}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Reina Blanca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,7 +2075,7 @@ GameObject:
   - component: {fileID: 7576108582973199692}
   - component: {fileID: 8532306682526583617}
   - component: {fileID: 5133456705525808676}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2161,7 +2159,7 @@ GameObject:
   - component: {fileID: 428341174133394426}
   - component: {fileID: 3714034771044421121}
   - component: {fileID: 6162528829741630653}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2245,7 +2243,7 @@ GameObject:
   - component: {fileID: 2372519566649595794}
   - component: {fileID: 3063416835703305889}
   - component: {fileID: 7788077891114667531}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Blanca Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2329,7 +2327,7 @@ GameObject:
   - component: {fileID: 8143176082544790414}
   - component: {fileID: 1253611601557514455}
   - component: {fileID: 5262720558014829495}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2413,7 +2411,7 @@ GameObject:
   - component: {fileID: 8136524637525571462}
   - component: {fileID: 5997513910024696799}
   - component: {fileID: 258757232018279116}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Reina Negra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2497,7 +2495,7 @@ GameObject:
   - component: {fileID: 2216551907694850486}
   - component: {fileID: 5801760044641582891}
   - component: {fileID: 1876615543303121400}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2583,7 +2581,7 @@ GameObject:
   - component: {fileID: 7350338725425850559}
   - component: {fileID: 1364444132037743060}
   - component: {fileID: 388783235}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,9 +2720,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725430411299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,7 +2734,7 @@ GameObject:
   - component: {fileID: 7350338725430411486}
   - component: {fileID: 9084274322212789471}
   - component: {fileID: 1237889122}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2877,9 +2873,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725435104766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +2887,7 @@ GameObject:
   - component: {fileID: 7350338725435104761}
   - component: {fileID: 8177569511569596627}
   - component: {fileID: 330072899}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3032,9 +3026,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725478211048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3048,7 +3040,7 @@ GameObject:
   - component: {fileID: 7350338725478211051}
   - component: {fileID: 7816995956708308170}
   - component: {fileID: 1928613840}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3187,9 +3179,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725617834711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,7 +3193,7 @@ GameObject:
   - component: {fileID: 7350338725617834706}
   - component: {fileID: 1016933226871045733}
   - component: {fileID: 685302063}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3342,9 +3332,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725714900247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,7 +3346,7 @@ GameObject:
   - component: {fileID: 7350338725714900242}
   - component: {fileID: 151617584408502995}
   - component: {fileID: 1427083378}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Rey Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3497,9 +3485,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725753197560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,7 +3499,7 @@ GameObject:
   - component: {fileID: 7350338725753197563}
   - component: {fileID: 6534108297389654901}
   - component: {fileID: 2076182654}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3652,9 +3638,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338725843689410
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,7 +3652,7 @@ GameObject:
   - component: {fileID: 7350338725843689469}
   - component: {fileID: 5451570610187467868}
   - component: {fileID: 725737627}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3807,9 +3791,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726050189867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,7 +3805,7 @@ GameObject:
   - component: {fileID: 7350338726050189862}
   - component: {fileID: 1235745724668615135}
   - component: {fileID: 1970091413}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3962,9 +3944,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726052179193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,7 +3958,7 @@ GameObject:
   - component: {fileID: 7350338726052179188}
   - component: {fileID: 2849185872593465580}
   - component: {fileID: 55204435}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4117,9 +4097,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726102544844
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,7 +4111,7 @@ GameObject:
   - component: {fileID: 7350338726102544847}
   - component: {fileID: 3965464844301145176}
   - component: {fileID: 1603789767}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Reina Negra Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4272,9 +4250,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726126759450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,7 +4264,7 @@ GameObject:
   - component: {fileID: 7350338726126759445}
   - component: {fileID: 1425642574625973303}
   - component: {fileID: 900217904}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Blanca Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4427,9 +4403,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726177932539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4443,7 +4417,7 @@ GameObject:
   - component: {fileID: 7350338726177932534}
   - component: {fileID: 3228996163628860058}
   - component: {fileID: 1895677251}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4582,9 +4556,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726293919253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,7 +4570,7 @@ GameObject:
   - component: {fileID: 7350338726293919248}
   - component: {fileID: 5425993761818239254}
   - component: {fileID: 1343440318}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4737,9 +4709,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726300928415
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,7 +4723,7 @@ GameObject:
   - component: {fileID: 7350338726300928410}
   - component: {fileID: 4434480851579214796}
   - component: {fileID: 346482162}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4892,9 +4862,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726454880660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4908,7 +4876,7 @@ GameObject:
   - component: {fileID: 7350338726454880663}
   - component: {fileID: 7515291534308553707}
   - component: {fileID: 1385266325}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5047,9 +5015,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726471226735
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,7 +5029,7 @@ GameObject:
   - component: {fileID: 7350338726471226730}
   - component: {fileID: 1633818121058634023}
   - component: {fileID: 1238384398}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5202,9 +5168,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726481244892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,7 +5182,7 @@ GameObject:
   - component: {fileID: 7350338726481244895}
   - component: {fileID: 3518550823542088464}
   - component: {fileID: 1592631265}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Rey Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5357,9 +5321,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726562280661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5373,7 +5335,7 @@ GameObject:
   - component: {fileID: 7350338726562280656}
   - component: {fileID: 1895761260945528317}
   - component: {fileID: 622026428}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5512,9 +5474,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726690651804
 GameObject:
   m_ObjectHideFlags: 0
@@ -5528,7 +5488,7 @@ GameObject:
   - component: {fileID: 7350338726690651807}
   - component: {fileID: 4311485401053358334}
   - component: {fileID: 1274453137}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5667,9 +5627,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726783827651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5683,7 +5641,7 @@ GameObject:
   - component: {fileID: 7350338726783827710}
   - component: {fileID: 7565120265356847327}
   - component: {fileID: 1442893685}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PeonBlanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5822,9 +5780,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726879639824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5838,7 +5794,7 @@ GameObject:
   - component: {fileID: 7350338726879639827}
   - component: {fileID: 8845941810256884834}
   - component: {fileID: 1235286371}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5977,9 +5933,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726924271891
 GameObject:
   m_ObjectHideFlags: 0
@@ -5993,7 +5947,7 @@ GameObject:
   - component: {fileID: 7350338726924271886}
   - component: {fileID: 6456686975723726607}
   - component: {fileID: 688184026}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6132,9 +6086,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338726924417009
 GameObject:
   m_ObjectHideFlags: 0
@@ -6148,7 +6100,7 @@ GameObject:
   - component: {fileID: 7350338726924417004}
   - component: {fileID: 3004484150977021618}
   - component: {fileID: 1869707660}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6287,9 +6239,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727115449135
 GameObject:
   m_ObjectHideFlags: 0
@@ -6303,7 +6253,7 @@ GameObject:
   - component: {fileID: 7350338727115449130}
   - component: {fileID: 7836840474338031027}
   - component: {fileID: 1658053739}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6442,9 +6392,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727141277583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6458,7 +6406,7 @@ GameObject:
   - component: {fileID: 7350338727141277578}
   - component: {fileID: 2097792135285270861}
   - component: {fileID: 1516815134}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6597,9 +6545,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727239915127
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,7 +6559,7 @@ GameObject:
   - component: {fileID: 7350338727239915122}
   - component: {fileID: 4499258999893688762}
   - component: {fileID: 146767310}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6752,9 +6698,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727267076164
 GameObject:
   m_ObjectHideFlags: 0
@@ -6768,7 +6712,7 @@ GameObject:
   - component: {fileID: 7350338727267076167}
   - component: {fileID: 3925927548008847287}
   - component: {fileID: 1945883024}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6907,9 +6851,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727298433689
 GameObject:
   m_ObjectHideFlags: 0
@@ -6923,7 +6865,7 @@ GameObject:
   - component: {fileID: 7350338727298433684}
   - component: {fileID: 8529965904611871367}
   - component: {fileID: 882568125}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Reina Blanca Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7062,9 +7004,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727312104771
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,7 +7018,7 @@ GameObject:
   - component: {fileID: 7350338727312104830}
   - component: {fileID: 8810805437172019155}
   - component: {fileID: 1415564959}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7217,9 +7157,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727341596720
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,7 +7171,7 @@ GameObject:
   - component: {fileID: 7350338727341596723}
   - component: {fileID: 3453197728527273762}
   - component: {fileID: 1894831402}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Caballo Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7372,9 +7310,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7350338727375879674
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,7 +7324,7 @@ GameObject:
   - component: {fileID: 7350338727375879669}
   - component: {fileID: 7498937581506562838}
   - component: {fileID: 1618238487}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Negro Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7527,9 +7463,7 @@ MonoBehaviour:
   black: {fileID: 0}
   groundFather: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
-  pieceCaptured: {fileID: 0}
-  grabPiece: {fileID: 0}
-  positionCapture: {fileID: 0}
+  life: 0
 --- !u!1 &7443661072960189496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,7 +7475,7 @@ GameObject:
   - component: {fileID: 280574607443491459}
   - component: {fileID: 899007196537408694}
   - component: {fileID: 6948967563363133064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Rey Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7625,7 +7559,7 @@ GameObject:
   - component: {fileID: 8758386660219858557}
   - component: {fileID: 360214307337925894}
   - component: {fileID: 7820794357092888361}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7776,7 +7710,7 @@ GameObject:
   - component: {fileID: 2793720104696263815}
   - component: {fileID: 2924086756842913484}
   - component: {fileID: 3898982204262667855}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7860,7 +7794,7 @@ GameObject:
   - component: {fileID: 915744675768015564}
   - component: {fileID: 7279726050307527673}
   - component: {fileID: 4722971464614153527}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Torre Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7944,7 +7878,7 @@ GameObject:
   - component: {fileID: 9040163184583486301}
   - component: {fileID: 2526714074483213706}
   - component: {fileID: 8222930424056482568}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Alfil Negro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8028,7 +7962,7 @@ GameObject:
   - component: {fileID: 8139676886576767473}
   - component: {fileID: 5373766776227403477}
   - component: {fileID: 1047151782153416108}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Peon Blanco
   m_TagString: Untagged
   m_Icon: {fileID: 0}

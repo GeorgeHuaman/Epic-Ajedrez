@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5621e5ad1b9084f8bb66de8251cfd5a3, type: 3}
+  m_Name: Space_1
+  m_EditorClassIdentifier: 
+  version: 1
+  sku: bp1f94bqf2t9y36d5gc2p9af
+  packageName: Ajedrez
+  thumbnail: {fileID: 2800000, guid: 827ea9a2f14d7be46ad133e5c1e33403, type: 3}
+  savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
+    type: 2}
+  worldID: 0fxf4zc2ep7892aybysti
+  scene: {fileID: 102900000, guid: d10ce6bc5022e35408c25e092eafec4a, type: 3}
+  csharpAssembly: {fileID: 5897886265953266890, guid: ff3fa44800ccaa84da364c3d362d2ce2,
+    type: 3}
+  embeddedPackageAssets: []
+  networkPrefabs: []
+  settings:
+    serverInstancingEnabled: 1
+    serverCapacitySetting: 0
+    serverInstanceCapacity: 16
