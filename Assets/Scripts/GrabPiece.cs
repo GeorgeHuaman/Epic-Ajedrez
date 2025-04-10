@@ -822,6 +822,38 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             if (rook)
                 piece.GetComponent<PieceType>().move++;
 
+            if (piece.GetComponent<PieceType>().color == PieceType.PieceColor.Blanco)
+            {
+                if (piece.GetComponent<PieceType>().type == PieceType.Type.Rey)
+                {
+                    if (map.GetMap("H", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    {
+                        map.GetMap("H", 1).occupiedBy.transform.position = map.GetMap("G", 1).ground.transform.position;
+                        piece.transform.position = map.GetMap("H", 1).occupiedBy.transform.position;
+                    }
+                    if (map.GetMap("A", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    {
+                        map.GetMap("A", 1).occupiedBy.transform.position = map.GetMap("B", 1).ground.transform.position;
+                        piece.transform.position = map.GetMap("A", 1).occupiedBy.transform.position;
+                    }
+                }
+            }
+            if (piece.GetComponent<PieceType>().color == PieceType.PieceColor.Negro)
+            {
+                if (piece.GetComponent<PieceType>().type == PieceType.Type.Rey)
+                {
+                    if (map.GetMap("H", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    {
+                        map.GetMap("H", 8).occupiedBy.transform.position = map.GetMap("G", 8).ground.transform.position;
+                        piece.transform.position = map.GetMap("H", 8).occupiedBy.transform.position;
+                    }
+                    if (map.GetMap("A", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    {
+                        map.GetMap("A", 8).occupiedBy.transform.position = map.GetMap("B", 8).ground.transform.position;
+                        piece.transform.position = map.GetMap("A", 8).occupiedBy.transform.position;
+                    }
+                }
+            }
             foreach (ArrayMap.Map ground in map.maps)
             {
                 if (piecePos.currentLetter == ground.name && piecePos.currentNumber == ground.number)
