@@ -46,7 +46,11 @@ public class Table : SpatialNetworkBehaviour, IVariablesChanged
         GiveControl();
         turnWhite.value = false;
     }
-
+    public void TurnForWhite()
+    {
+        GiveControl();
+        turnWhite.value = true;
+    }
     public void SelectBlack()
     {
         foreach (GameObject go in negros)

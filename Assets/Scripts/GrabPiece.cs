@@ -778,6 +778,8 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     public void ResetPosition()
     {
         GiveControlTurn();
+        once.value = false;
+        Table.instance.TurnForWhite();
         PanelVictory.instance.ResetText();
         Timers.instance.ResetTime();
         foreach (var whrite in table.blancos)
@@ -819,6 +821,14 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 piece.GetComponent<PieceType>().move++;
             if (rook)
                 piece.GetComponent<PieceType>().move++;
+
+            foreach (ArrayMap.Map ground in map.maps)
+            {
+                if (piecePos.currentLetter == ground.name && piecePos.currentNumber == ground.number)
+                {
+                    piece.transform.position = ground.ground.transform.position;
+                }
+            }
             Table.instance.NextTurn();
         }
 
