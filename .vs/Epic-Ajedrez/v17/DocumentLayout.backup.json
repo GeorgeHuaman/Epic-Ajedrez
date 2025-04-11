@@ -1,41 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Proyectos\\Epic-Ajedrez\\",
+  "WorkspaceRootPath": "D:\\Github\\Epic-Ajedrez\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|e:\\proyectos\\epic-ajedrez\\assets\\scripts\\grabpiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\grabpiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|e:\\proyectos\\epic-ajedrez\\assets\\scripts\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\arraymap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\arraymap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\panelvictory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\panelvictory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\piecepositiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\piecepositiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\piecepositiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\piecetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|d:\\github\\epic-ajedrez\\assets\\scripts\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|d:\\github\\epic-ajedrez\\assets\\scripts\\grabpiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\grabpiece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\panelvictory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\panelvictory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\arraymap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\arraymap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\piecetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\piecetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|E:\\Proyectos\\Epic-Ajedrez\\assets\\scripts\\timers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|D:\\Github\\Epic-Ajedrez\\assets\\scripts\\timers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD3C59FE-9564-1217-D822-9954B5EAACA7}|NewAssembly.csproj|solutionrelative:assets\\scripts\\timers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -45,53 +45,53 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 207,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 226,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GrabPiece.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\GrabPiece.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GrabPiece.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\GrabPiece.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GrabPiece.cs",
+              "ViewState": "AQIAACcDAAAAAAAAAAAcwEEDAAB4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T23:45:46.677Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "PanelVictory.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\PanelVictory.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\PanelVictory.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PanelVictory.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\PanelVictory.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\PanelVictory.cs",
               "RelativeToolTip": "Assets\\Scripts\\PanelVictory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAPAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T16:27:57.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GrabPiece.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\GrabPiece.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GrabPiece.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\GrabPiece.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GrabPiece.cs",
-              "ViewState": "AgIAAJsCAAAAAAAAAAAmwA0DAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T17:56:05.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Coordinate.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Coordinate.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Coordinate.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Coordinate.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Coordinate.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Coordinate.cs",
               "RelativeToolTip": "Assets\\Scripts\\Coordinate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T21:55:47.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Team.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Team.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Team.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Team.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Team.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Team.cs",
               "RelativeToolTip": "Assets\\Scripts\\Team.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -101,9 +101,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Timers.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Timers.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Timers.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Timers.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Timers.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Timers.cs",
               "RelativeToolTip": "Assets\\Scripts\\Timers.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAA9wCUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -112,57 +112,58 @@
           ]
         },
         {
-          "DockedWidth": 193,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 174,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PieceType.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\PieceType.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PieceType.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\PieceType.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PieceType.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwBgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T19:39:15.526Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ArrayMap.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\ArrayMap.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\ArrayMap.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ArrayMap.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\ArrayMap.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\ArrayMap.cs",
               "RelativeToolTip": "Assets\\Scripts\\ArrayMap.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwGkAAAASAAAAAAAAAA==",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAuwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T21:55:57.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "PiecePositionDetector.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\PiecePositionDetector.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\PiecePositionDetector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PiecePositionDetector.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\PiecePositionDetector.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\PiecePositionDetector.cs",
               "RelativeToolTip": "Assets\\Scripts\\PiecePositionDetector.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAwwJEAAAA7AAAAAAAAAA==",
+              "ViewState": "AQIAADgAAAAAAAAAAAAwwFgAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T18:36:32.195Z"
+              "WhenOpened": "2025-03-11T18:36:32.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Table.cs",
-              "DocumentMoniker": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Table.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Table.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Table.cs",
-              "ToolTip": "E:\\Proyectos\\Epic-Ajedrez\\Assets\\Scripts\\Table.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\Table.cs",
               "RelativeToolTip": "Assets\\Scripts\\Table.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDAAAAAcAAAAAAAAAA==",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAMwBsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T02:08:12.601Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PieceType.cs",
+              "DocumentMoniker": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\PieceType.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PieceType.cs",
+              "ToolTip": "D:\\Github\\Epic-Ajedrez\\Assets\\Scripts\\PieceType.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PieceType.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T19:39:15.526Z"
             }
           ]
         }

@@ -9,8 +9,8 @@ public class Timers : SpatialNetworkBehaviour, IVariablesChanged
     public static Timers instance;
     public TMP_Text whiteTimerText;
     public TMP_Text blackTimerText;
-    private NetworkVariable<float> countdownWhiteTime = new(initialValue: 1800f);
-    private NetworkVariable<float> countdownBlackTime = new(initialValue: 1800f);
+    private NetworkVariable<float> countdownWhiteTime = new(initialValue: 600f);
+    private NetworkVariable<float> countdownBlackTime = new(initialValue: 600f);
     private bool isRunningWhite = false;
     private bool isRunningBlack = false;
 
@@ -38,8 +38,8 @@ public class Timers : SpatialNetworkBehaviour, IVariablesChanged
         GiveControl();
         isRunningWhite = false;
         isRunningBlack = false;
-        countdownWhiteTime.value = 1800f;
-        countdownBlackTime.value = 1800f;
+        countdownWhiteTime.value = 600f;
+        countdownBlackTime.value = 600f;
     }
     public void StartWhiteTimer()
     {

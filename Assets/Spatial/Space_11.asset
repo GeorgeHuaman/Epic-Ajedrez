@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5621e5ad1b9084f8bb66de8251cfd5a3, type: 3}
-  m_Name: Space_1
+  m_Name: Space_11
   m_EditorClassIdentifier: 
   version: 1
-  sku: bp1f94bqf2t9y36d5gc2p9af
-  packageName: Ajedrez Sala 1
+  sku: lby88lpe1mq36nu8lyjef2ng
+  packageName: Ajedrez Sala 10
   thumbnail: {fileID: 2800000, guid: 827ea9a2f14d7be46ad133e5c1e33403, type: 3}
   savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
     type: 2}
