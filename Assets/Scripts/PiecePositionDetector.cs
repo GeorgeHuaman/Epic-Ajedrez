@@ -81,7 +81,7 @@ public class PiecePositionDetector : SpatialNetworkBehaviour,IVariablesChanged
         //    }
 
         //}
-        float maxDetectDistance = 1.5f; // Distancia máxima que se permite para detectar una casilla
+        float maxDetectDistance = 2f; // Distancia máxima que se permite para detectar una casilla
 
         if (!inGame.value)
         {

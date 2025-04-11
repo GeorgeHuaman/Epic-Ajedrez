@@ -806,10 +806,9 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
     public void CheckValidMove()
     {
         PiecePositionDetector piecePos = piece.GetComponent<PiecePositionDetector>();
-
         if (!piecePos.inGame)
             return;
-        if (piecePos.GetComponent<PieceType>().type == PieceType.Type.Peon && piecePos.currentNumber == 0 || piecePos.currentNumber == 8)
+        if (piecePos.GetComponent<PieceType>().type == PieceType.Type.Peon && (piecePos.currentNumber == 0 || piecePos.currentNumber == 8))
             return;
         if (!validMoves.Contains((piecePos.currentLetter, piecePos.currentNumber)))
         {
@@ -826,15 +825,13 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             {
                 if (piece.GetComponent<PieceType>().type == PieceType.Type.Rey)
                 {
-                    if (map.GetMap("H", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    if (map.GetMap("H", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "H" && piecePos.currentNumber ==1)
                     {
                         map.GetMap("H", 1).occupiedBy.transform.position = map.GetMap("G", 1).ground.transform.position;
-                        piece.transform.position = map.GetMap("H", 1).occupiedBy.transform.position;
                     }
-                    if (map.GetMap("A", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    if (map.GetMap("A", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "A" && piecePos.currentNumber == 1)
                     {
                         map.GetMap("A", 1).occupiedBy.transform.position = map.GetMap("B", 1).ground.transform.position;
-                        piece.transform.position = map.GetMap("A", 1).occupiedBy.transform.position;
                     }
                 }
             }
@@ -842,15 +839,15 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             {
                 if (piece.GetComponent<PieceType>().type == PieceType.Type.Rey)
                 {
-                    if (map.GetMap("H", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    if (map.GetMap("H", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "H" && piecePos.currentNumber == 8)
                     {
                         map.GetMap("H", 8).occupiedBy.transform.position = map.GetMap("G", 8).ground.transform.position;
-                        piece.transform.position = map.GetMap("H", 8).occupiedBy.transform.position;
+                        Debug.LogWarning("H");
                     }
-                    if (map.GetMap("A", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre)
+                    if (map.GetMap("A", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "A" && piecePos.currentNumber == 8)
                     {
                         map.GetMap("A", 8).occupiedBy.transform.position = map.GetMap("B", 8).ground.transform.position;
-                        piece.transform.position = map.GetMap("A", 8).occupiedBy.transform.position;
+                        Debug.LogWarning("A");
                     }
                 }
             }
@@ -861,6 +858,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                     piece.transform.position = ground.ground.transform.position;
                 }
             }
+            Debug.LogWarning("A");
             Table.instance.NextTurn();
         }
 
