@@ -632,7 +632,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 {
                     if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color && m.occupiedBy.GetComponent<PieceType>().move == 0)
                     {
-                        HighlightGroundTowerKing(c.ToString(), currentNumber);
+                        HighlightGroundTowerKing("G", currentNumber); // enroque corto
                     }
                 }
 
@@ -650,7 +650,7 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
                 {
                     if (m.occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && m.occupiedBy.GetComponent<PieceType>().color == piece.GetComponent<PieceType>().color && m.occupiedBy.GetComponent<PieceType>().move == 0)
                     {
-                        HighlightGroundTowerKing(c.ToString(), currentNumber);
+                        HighlightGroundTowerKing("C", currentNumber); // enroque largo
                     }
                 }
 
@@ -825,13 +825,13 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             {
                 if (piece.GetComponent<PieceType>().type == PieceType.Type.Rey)
                 {
-                    if (map.GetMap("H", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "H" && piecePos.currentNumber ==1)
+                    if (/*map.GetMap("G", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && */piecePos.currentLetter == "G" && piecePos.currentNumber ==1) // enroque corto
                     {
-                        map.GetMap("H", 1).occupiedBy.transform.position = map.GetMap("G", 1).ground.transform.position;
+                        map.GetMap("H", 1).occupiedBy.transform.position = map.GetMap("F", 1).ground.transform.position;
                     }
-                    if (map.GetMap("A", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "A" && piecePos.currentNumber == 1)
+                    if (/*map.GetMap("B", 1).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && */piecePos.currentLetter == "C" && piecePos.currentNumber == 1)
                     {
-                        map.GetMap("A", 1).occupiedBy.transform.position = map.GetMap("B", 1).ground.transform.position;
+                        map.GetMap("A", 1).occupiedBy.transform.position = map.GetMap("D", 1).ground.transform.position;
                     }
                 }
             }
@@ -839,14 +839,14 @@ public class GrabPiece : SpatialNetworkBehaviour, IVariablesChanged
             {
                 if (piece.GetComponent<PieceType>().type == PieceType.Type.Rey)
                 {
-                    if (map.GetMap("H", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "H" && piecePos.currentNumber == 8)
+                    if (/*map.GetMap("G", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && */piecePos.currentLetter == "G" && piecePos.currentNumber == 8) // enroque corto
                     {
-                        map.GetMap("H", 8).occupiedBy.transform.position = map.GetMap("G", 8).ground.transform.position;
+                        map.GetMap("H", 8).occupiedBy.transform.position = map.GetMap("F", 8).ground.transform.position;
                         Debug.LogWarning("H");
                     }
-                    if (map.GetMap("A", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && piecePos.currentLetter == "A" && piecePos.currentNumber == 8)
+                    if (/*map.GetMap("B", 8).occupiedBy.GetComponent<PieceType>().type == PieceType.Type.Torre && */piecePos.currentLetter == "C" && piecePos.currentNumber == 8)
                     {
-                        map.GetMap("A", 8).occupiedBy.transform.position = map.GetMap("B", 8).ground.transform.position;
+                        map.GetMap("A", 8).occupiedBy.transform.position = map.GetMap("D", 8).ground.transform.position;
                         Debug.LogWarning("A");
                     }
                 }
